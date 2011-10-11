@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class JTRevealSidebarView;
+
+@interface ViewController : UIViewController {
+    JTRevealSidebarView *_revealView;
+}
 
 @end

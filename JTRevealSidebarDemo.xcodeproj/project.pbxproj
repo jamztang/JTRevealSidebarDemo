@@ -21,6 +21,7 @@
 		1AD470A914446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		1AD470B114446392002EE1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD470AF14446392002EE1B0 /* InfoPlist.strings */; };
 		1AD470B414446392002EE1B0 /* JTRevealSidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */; };
+		1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +39,24 @@
 		1AD4708514446391002EE1B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AD4708714446391002EE1B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1AD4708914446392002EE1B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1AD4708D14446392002EE1B0 /* JTRevealSidebarDemo-Info.plist */ = {isa = PBXFileReference; path = "JTRevealSidebarDemo-Info.plist"; sourceTree = "<group>"; };
+		1AD4708D14446392002EE1B0 /* JTRevealSidebarDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JTRevealSidebarDemo-Info.plist"; sourceTree = "<group>"; };
 		1AD4708F14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AD4709114446392002EE1B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1AD4709314446392002EE1B0 /* JTRevealSidebarDemo-Prefix.pch */ = {isa = PBXFileReference; path = "JTRevealSidebarDemo-Prefix.pch"; sourceTree = "<group>"; };
-		1AD4709414446392002EE1B0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		1AD4709314446392002EE1B0 /* JTRevealSidebarDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JTRevealSidebarDemo-Prefix.pch"; sourceTree = "<group>"; };
+		1AD4709414446392002EE1B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AD4709514446392002EE1B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1AD4709714446392002EE1B0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		1AD4709714446392002EE1B0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1AD4709814446392002EE1B0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1AD4709B14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		1AD4709E14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JTRevealSidebarDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD470A614446392002EE1B0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		1AD470AE14446392002EE1B0 /* JTRevealSidebarDemoTests-Info.plist */ = {isa = PBXFileReference; path = "JTRevealSidebarDemoTests-Info.plist"; sourceTree = "<group>"; };
+		1AD470AE14446392002EE1B0 /* JTRevealSidebarDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JTRevealSidebarDemoTests-Info.plist"; sourceTree = "<group>"; };
 		1AD470B014446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1AD470B214446392002EE1B0 /* JTRevealSidebarDemoTests.h */ = {isa = PBXFileReference; path = JTRevealSidebarDemoTests.h; sourceTree = "<group>"; };
+		1AD470B214446392002EE1B0 /* JTRevealSidebarDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarDemoTests.h; sourceTree = "<group>"; };
 		1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTRevealSidebarDemoTests.m; sourceTree = "<group>"; };
+		1AD470BE144463B4002EE1B0 /* JTRevealSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarView.h; sourceTree = "<group>"; };
+		1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRevealSidebarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		1AD4707614446391002EE1B0 = {
 			isa = PBXGroup;
 			children = (
+				1AD470BD144463B4002EE1B0 /* JTRevealSidebar */,
 				1AD4708B14446392002EE1B0 /* JTRevealSidebarDemo */,
 				1AD470AC14446392002EE1B0 /* JTRevealSidebarDemoTests */,
 				1AD4708414446391002EE1B0 /* Frameworks */,
@@ -152,6 +156,15 @@
 				1AD470AF14446392002EE1B0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AD470BD144463B4002EE1B0 /* JTRevealSidebar */ = {
+			isa = PBXGroup;
+			children = (
+				1AD470BE144463B4002EE1B0 /* JTRevealSidebarView.h */,
+				1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */,
+			);
+			path = JTRevealSidebar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +277,7 @@
 				1AD4709214446392002EE1B0 /* main.m in Sources */,
 				1AD4709614446392002EE1B0 /* AppDelegate.m in Sources */,
 				1AD4709914446392002EE1B0 /* ViewController.m in Sources */,
+				1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

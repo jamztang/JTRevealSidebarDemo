@@ -7,13 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "JTRevealSidebarView.h"
 
 @implementation ViewController
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+- (void)dealloc {
+    [_revealView release];
+    [super dealloc];
 }
 
 #pragma mark - View lifecycle
@@ -21,7 +21,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    _revealView = [JTRevealSidebarView defaultViewWithFrame:self.view.bounds];
+
+    // Construct a toggle button for our contentView
+    UIButton *toggleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    {
+        [toggleButton setTitle:@"Toggle" forState:UIControlStateNormal];
+        [toggleButton sizeToFit];
+        [toggleButton addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    [_revealView.contentView addSubview:toggleButton];
+    
+    [self.view addSubview:_revealView];
 }
 
 - (void)viewDidUnload
@@ -31,34 +44,14 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+#pragma mark Actions
+
+- (void)toggleButtonPressed:(id)sender {
+    [_revealView revealSidebar: ! [_revealView isSidebarShowing]];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return YES;
 }
 
 @end
