@@ -4,6 +4,12 @@ JTRevealSidebar
 An iOS objective-c library template for mimic the sidebar layout of the new Facebook app.
 It's still in very early development state and doesn't have any functions, so please see it as demonstrating purpose.
 
+Demo
+----
+![Not revealed](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo1.png)
+![Revealed](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo2.png)
+
+
 Motivation
 ----------
 
