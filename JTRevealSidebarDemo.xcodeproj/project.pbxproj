@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
+		1AD4708814446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
+		1AD4708A14446392002EE1B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
+		1AD4709014446392002EE1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4708E14446392002EE1B0 /* InfoPlist.strings */; };
+		1AD4709214446392002EE1B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4709114446392002EE1B0 /* main.m */; };
+		1AD4709614446392002EE1B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4709514446392002EE1B0 /* AppDelegate.m */; };
+		1AD4709914446392002EE1B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4709814446392002EE1B0 /* ViewController.m */; };
+		1AD4709C14446392002EE1B0 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4709A14446392002EE1B0 /* ViewController_iPhone.xib */; };
+		1AD4709F14446392002EE1B0 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4709D14446392002EE1B0 /* ViewController_iPad.xib */; };
+		1AD470A714446392002EE1B0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD470A614446392002EE1B0 /* SenTestingKit.framework */; };
+		1AD470A814446392002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
+		1AD470A914446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
+		1AD470B114446392002EE1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD470AF14446392002EE1B0 /* InfoPlist.strings */; };
+		1AD470B414446392002EE1B0 /* JTRevealSidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AD470AA14446392002EE1B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD4707814446391002EE1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AD4708014446391002EE1B0;
+			remoteInfo = JTRevealSidebarDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AD4708114446391002EE1B0 /* JTRevealSidebarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JTRevealSidebarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD4708514446391002EE1B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1AD4708714446391002EE1B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1AD4708914446392002EE1B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1AD4708D14446392002EE1B0 /* JTRevealSidebarDemo-Info.plist */ = {isa = PBXFileReference; path = "JTRevealSidebarDemo-Info.plist"; sourceTree = "<group>"; };
+		1AD4708F14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AD4709114446392002EE1B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1AD4709314446392002EE1B0 /* JTRevealSidebarDemo-Prefix.pch */ = {isa = PBXFileReference; path = "JTRevealSidebarDemo-Prefix.pch"; sourceTree = "<group>"; };
+		1AD4709414446392002EE1B0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		1AD4709514446392002EE1B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1AD4709714446392002EE1B0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		1AD4709814446392002EE1B0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1AD4709B14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		1AD4709E14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JTRevealSidebarDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD470A614446392002EE1B0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1AD470AE14446392002EE1B0 /* JTRevealSidebarDemoTests-Info.plist */ = {isa = PBXFileReference; path = "JTRevealSidebarDemoTests-Info.plist"; sourceTree = "<group>"; };
+		1AD470B014446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AD470B214446392002EE1B0 /* JTRevealSidebarDemoTests.h */ = {isa = PBXFileReference; path = JTRevealSidebarDemoTests.h; sourceTree = "<group>"; };
+		1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTRevealSidebarDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AD4707E14446391002EE1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */,
+				1AD4708814446392002EE1B0 /* Foundation.framework in Frameworks */,
+				1AD4708A14446392002EE1B0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD470A114446392002EE1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD470A714446392002EE1B0 /* SenTestingKit.framework in Frameworks */,
+				1AD470A814446392002EE1B0 /* UIKit.framework in Frameworks */,
+				1AD470A914446392002EE1B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AD4707614446391002EE1B0 = {
+			isa = PBXGroup;
+			children = (
+				1AD4708B14446392002EE1B0 /* JTRevealSidebarDemo */,
+				1AD470AC14446392002EE1B0 /* JTRevealSidebarDemoTests */,
+				1AD4708414446391002EE1B0 /* Frameworks */,
+				1AD4708214446391002EE1B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AD4708214446391002EE1B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4708114446391002EE1B0 /* JTRevealSidebarDemo.app */,
+				1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AD4708414446391002EE1B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4708514446391002EE1B0 /* UIKit.framework */,
+				1AD4708714446391002EE1B0 /* Foundation.framework */,
+				1AD4708914446392002EE1B0 /* CoreGraphics.framework */,
+				1AD470A614446392002EE1B0 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AD4708B14446392002EE1B0 /* JTRevealSidebarDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4709414446392002EE1B0 /* AppDelegate.h */,
+				1AD4709514446392002EE1B0 /* AppDelegate.m */,
+				1AD4709714446392002EE1B0 /* ViewController.h */,
+				1AD4709814446392002EE1B0 /* ViewController.m */,
+				1AD4709A14446392002EE1B0 /* ViewController_iPhone.xib */,
+				1AD4709D14446392002EE1B0 /* ViewController_iPad.xib */,
+				1AD4708C14446392002EE1B0 /* Supporting Files */,
+			);
+			path = JTRevealSidebarDemo;
+			sourceTree = "<group>";
+		};
+		1AD4708C14446392002EE1B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4708D14446392002EE1B0 /* JTRevealSidebarDemo-Info.plist */,
+				1AD4708E14446392002EE1B0 /* InfoPlist.strings */,
+				1AD4709114446392002EE1B0 /* main.m */,
+				1AD4709314446392002EE1B0 /* JTRevealSidebarDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AD470AC14446392002EE1B0 /* JTRevealSidebarDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AD470B214446392002EE1B0 /* JTRevealSidebarDemoTests.h */,
+				1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */,
+				1AD470AD14446392002EE1B0 /* Supporting Files */,
+			);
+			path = JTRevealSidebarDemoTests;
+			sourceTree = "<group>";
+		};
+		1AD470AD14446392002EE1B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AD470AE14446392002EE1B0 /* JTRevealSidebarDemoTests-Info.plist */,
+				1AD470AF14446392002EE1B0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD470B714446392002EE1B0 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemo" */;
+			buildPhases = (
+				1AD4707D14446391002EE1B0 /* Sources */,
+				1AD4707E14446391002EE1B0 /* Frameworks */,
+				1AD4707F14446391002EE1B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JTRevealSidebarDemo;
+			productName = JTRevealSidebarDemo;
+			productReference = 1AD4708114446391002EE1B0 /* JTRevealSidebarDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AD470A414446392002EE1B0 /* JTRevealSidebarDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD470BA14446392002EE1B0 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemoTests" */;
+			buildPhases = (
+				1AD470A014446392002EE1B0 /* Sources */,
+				1AD470A114446392002EE1B0 /* Frameworks */,
+				1AD470A214446392002EE1B0 /* Resources */,
+				1AD470A314446392002EE1B0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AD470AB14446392002EE1B0 /* PBXTargetDependency */,
+			);
+			name = JTRevealSidebarDemoTests;
+			productName = JTRevealSidebarDemoTests;
+			productReference = 1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AD4707814446391002EE1B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 1AD4707B14446391002EE1B0 /* Build configuration list for PBXProject "JTRevealSidebarDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1AD4707614446391002EE1B0;
+			productRefGroup = 1AD4708214446391002EE1B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */,
+				1AD470A414446392002EE1B0 /* JTRevealSidebarDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AD4707F14446391002EE1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD4709014446392002EE1B0 /* InfoPlist.strings in Resources */,
+				1AD4709C14446392002EE1B0 /* ViewController_iPhone.xib in Resources */,
+				1AD4709F14446392002EE1B0 /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD470A214446392002EE1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD470B114446392002EE1B0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AD470A314446392002EE1B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AD4707D14446391002EE1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD4709214446392002EE1B0 /* main.m in Sources */,
+				1AD4709614446392002EE1B0 /* AppDelegate.m in Sources */,
+				1AD4709914446392002EE1B0 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD470A014446392002EE1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD470B414446392002EE1B0 /* JTRevealSidebarDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AD470AB14446392002EE1B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */;
+			targetProxy = 1AD470AA14446392002EE1B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1AD4708E14446392002EE1B0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD4708F14446392002EE1B0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1AD4709A14446392002EE1B0 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD4709B14446392002EE1B0 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		1AD4709D14446392002EE1B0 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD4709E14446392002EE1B0 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		1AD470AF14446392002EE1B0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD470B014446392002EE1B0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AD470B514446392002EE1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AD470B614446392002EE1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AD470B814446392002EE1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemo/JTRevealSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemo/JTRevealSidebarDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1AD470B914446392002EE1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemo/JTRevealSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemo/JTRevealSidebarDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1AD470BB14446392002EE1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JTRevealSidebarDemo.app/JTRevealSidebarDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemo/JTRevealSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemoTests/JTRevealSidebarDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1AD470BC14446392002EE1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JTRevealSidebarDemo.app/JTRevealSidebarDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemo/JTRevealSidebarDemo-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemoTests/JTRevealSidebarDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AD4707B14446391002EE1B0 /* Build configuration list for PBXProject "JTRevealSidebarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD470B514446392002EE1B0 /* Debug */,
+				1AD470B614446392002EE1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AD470B714446392002EE1B0 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD470B814446392002EE1B0 /* Debug */,
+				1AD470B914446392002EE1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1AD470BA14446392002EE1B0 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD470BB14446392002EE1B0 /* Debug */,
+				1AD470BC14446392002EE1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AD4707814446391002EE1B0 /* Project object */;
+}
