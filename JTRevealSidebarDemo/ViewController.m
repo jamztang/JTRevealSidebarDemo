@@ -38,6 +38,7 @@ typedef enum {
     UITableView *tableView = [[[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds] autorelease];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_revealView.sidebarView pushView:tableView animated:NO];
 
     // Construct a toggle button for our contentView and add into it
