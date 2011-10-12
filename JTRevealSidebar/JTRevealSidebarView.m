@@ -7,6 +7,7 @@
  */
 
 #import "JTRevealSidebarView.h"
+#import "JTNavigationView.h"
 
 @implementation JTRevealSidebarView
 
@@ -24,14 +25,14 @@
 
 #pragma mark Properties
 
-- (void)setContentView:(UIView *)aContentView {
+- (void)setContentView:(JTNavigationView *)aContentView {
     [contentView removeFromSuperview];
     [contentView autorelease], contentView = nil;
     contentView = [aContentView retain];
     [self addSubview:aContentView];
 }
 
-- (void)setSidebarView:(UIView *)aSidebarView {
+- (void)setSidebarView:(JTNavigationView *)aSidebarView {
     [sidebarView removeFromSuperview];
     [sidebarView autorelease], sidebarView = nil;
     sidebarView = [aSidebarView retain];
@@ -62,7 +63,7 @@
     JTRevealSidebarView *revealView = [[JTRevealSidebarView alloc] initWithFrame:frame];
     revealView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
-    UITableView *sidebarView = [[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, CGRectGetHeight(frame))] autorelease];
+    JTNavigationView *sidebarView = [[[JTNavigationView alloc] initWithFrame:CGRectMake(0, 0, 270, CGRectGetHeight(frame))] autorelease];
     {
         sidebarView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
         revealView.sidebarView = sidebarView;

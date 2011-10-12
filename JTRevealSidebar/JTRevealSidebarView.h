@@ -9,13 +9,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class JTNavigationView;
+
 @interface JTRevealSidebarView : UIView {
     struct {
         unsigned int isShowing:1;
     } _state;
 }
 
-@property (nonatomic, retain) UIView *sidebarView;
+@property (nonatomic, retain) JTNavigationView *sidebarView;
 @property (nonatomic, retain) UIView *contentView;
 
 - (void)revealSidebar:(BOOL)shouldReveal;

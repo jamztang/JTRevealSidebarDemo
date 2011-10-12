@@ -18,11 +18,18 @@ Just for fun and for demonstration purpose!
 How To Use It
 -------------
 
-### Using JTRevealView
 
-Just #import the JTRevealView.h header, and construct a JTRevealView, and add it to your viewController.
+### Installation
+
+Include all files in JTRevealSidebar into your project.
+
+
+### Setting up with JTRevealSidebarView
+
+Just #import the JTRevealSidebarView.h header, and construct a JTRevealSidebarView, and add it to your viewController.
 
     #import "JTRevealSidebarView.h"
+    #import "JTNavigationView.h"
 
     ...
 
@@ -30,23 +37,43 @@ Just #import the JTRevealView.h header, and construct a JTRevealView, and add it
     - (void)viewDidLoad
     {
         [super viewDidLoad];
-    
-        _revealView = [JTRevealSidebarView defaultViewWithFrame:self.view.bounds];
-    
-        // Construct a toggle button for our contentView
-        UIButton *toggleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        {
-            [toggleButton setTitle:@"Toggle" forState:UIControlStateNormal];
-            [toggleButton sizeToFit];
-            [toggleButton addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        }
-    
+
+        // Create a default style RevealSidebarView
+        _revealView = [[JTRevealSidebarView defaultViewWithFrame:self.view.bounds] retain];
+        
+        // Setup a view to be the rootView of the sidebar
+        UITableView *tableView = ...;
+        [_revealView.sidebarView pushView:tableView animated:NO];
+
+        // Construct a toggle button for our contentView and add into it
+        UIButton *toggleButton = ...;
         [_revealView.contentView addSubview:toggleButton];
-    
+        
         [self.view addSubview:_revealView];
     }
+
 
     - (void)toggleButtonPressed:(id)sender {
         [_revealView revealSidebar: ! [_revealView isSidebarShowing]];
     }
+
+
+### Interacting on the sidebar (JTNavigationView)
+
+    // Pushing a view on the sidebar
+    [_revealView.sidebarView pushView:view animated:YES];
+    
+    // Popping a view from the sidebar
+    [_revealView.sidebarView popViewAnimated:YES];
+
+
+
+Potential Future enhancements
+-------------------
+
+- Custom navigation bar
+- Push/Pop view on content view
+- Different styles of tableViewCells
+- Dragging gesture on contentView to toggle sidebar
+- and more.
 
