@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class JTRevealSidebarView;
+@class JTTableViewDatasource;
 
 @interface ViewController : UIViewController {
     JTRevealSidebarView *_revealView;
+    JTTableViewDatasource *_datasource;
 }
 
 @end

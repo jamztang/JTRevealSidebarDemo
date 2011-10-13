@@ -9,13 +9,15 @@
 #import "ViewController.h"
 #import "JTRevealSidebarView.h"
 #import "JTNavigationView.h"
+#import "JTTableViewDatasource.h"
+#import "JTTableViewCellTypes.h"
 
 typedef enum {
     JTTableRowPush,
     JTTableRowsCount
 } JTTableRow;
 
-@interface ViewController (UITableView) <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController (UITableView) <JTTableViewDatasourceDelegate>
 @end
 
 @implementation ViewController
@@ -33,11 +35,16 @@ typedef enum {
 
     // Create a default style RevealSidebarView
     _revealView = [[JTRevealSidebarView defaultViewWithFrame:self.view.bounds] retain];
+    _datasource = [[JTTableViewDatasource alloc] init];
+    _datasource.sections = [NSArray arrayWithObject:
+                            [NSArray arrayWithObject:
+                             [JTTableViewCellTypeExpandable expandableWithTitle:@"Friends" url:@"friends"]]];
+    _datasource.delegate = self;
     
     // Setup a view to be the rootView of the sidebar
     UITableView *tableView = [[[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds] autorelease];
-    tableView.delegate = self;
-    tableView.dataSource = self;
+    tableView.delegate = _datasource;
+    tableView.dataSource = _datasource;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_revealView.sidebarView pushView:tableView animated:NO];
 
@@ -71,64 +78,87 @@ typedef enum {
     return YES;
 }
 
+- (void)simulateFetchingDatasource:(JTTableViewDatasource *)datasource {
+    NSString *url = [datasource.sourceInfo objectForKey:@"url"];
+    if ([url isEqualToString:@"friends"]) {
+        datasource.sections = [NSArray arrayWithObject:
+                               [NSArray arrayWithObjects:
+                                [JTTableViewCellTypeBack baseWithTitle:@"Back"],
+                                [JTTableViewCellTypeExpandable expandableWithTitle:@"Mary" url:@"mary"],
+                                [JTTableViewCellTypeExpandable expandableWithTitle:@"James" url:@"james"],
+                                nil
+                                ]];
+        [(id)[_revealView.sidebarView topView] reloadData];
+    } else if ([url isEqualToString:@"mary"]) {
+        datasource.sections = [NSArray arrayWithObject:
+                               [NSArray arrayWithObjects:
+                                [JTTableViewCellTypeBack baseWithTitle:@"Back"],
+                                [JTTableViewCellTypeBase baseWithTitle:@"Name: Mary"],
+                                [JTTableViewCellTypeBase baseWithTitle:@"Age: 22"],
+                                nil
+                                ]];
+        [(id)[_revealView.sidebarView topView] reloadData];
+    } else if ([url isEqualToString:@"james"]) {
+        datasource.sections = [NSArray arrayWithObject:
+                               [NSArray arrayWithObjects:
+                                [JTTableViewCellTypeBack baseWithTitle:@"Back"],
+                                [JTTableViewCellTypeBase baseWithTitle:@"Name: James"],
+                                [JTTableViewCellTypeBase baseWithTitle:@"Age: 23"],
+                                nil
+                                ]];
+        [(id)[_revealView.sidebarView topView] reloadData];
+    }
+}
+
 @end
 
 
 @implementation ViewController (UITableView)
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (void)datasourceDidExpandSection:(JTTableViewDatasource *)datasource {
+    [self performSelector:@selector(simulateFetchingDatasource:) withObject:datasource afterDelay:2];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return JTTableRowsCount;
-}
+- (void)datasource:(JTTableViewDatasource *)datasource tableView:(UITableView *)tableView didSelectObject:(NSObject *)object {
+    if ([object conformsToProtocol:@protocol(JTTableViewCellTypeExpandable)]) {
+        id <JTTableViewCellTypeExpandable> expandable = (id)object;
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"cellIdentifier";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UITableView *tableView = [[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds style:UITableViewStylePlain];
+        tableView.dataSource = expandable.datasource;
+        tableView.delegate   = expandable.datasource;
+        expandable.datasource.delegate = self;
+        [_revealView.sidebarView pushView:tableView animated:YES];
+        [tableView release];
+    } else if ([object conformsToProtocol:@protocol(JTTableViewCellTypeBack)]) {
+        [_revealView.sidebarView popViewAnimated:YES];
+        UITableView *previousView = (UITableView *)[_revealView.sidebarView topView];
+        [previousView deselectRowAtIndexPath:[previousView indexPathForSelectedRow] animated:YES];
     }
-
-    switch (indexPath.row) {
-        case JTTableRowPush:
-            if ([[_revealView.sidebarView views] count] == 1) { // If only root view, we don't show Back button
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                cell.textLabel.text = @"Push";
-            } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
-                cell.textLabel.text = @"Back";
-            }
-            break;
-        default:
-            break;
-    }
-
-    return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == JTTableRowPush) {
-        if ([[_revealView.sidebarView views] count] == 1) { // If only root view, we push a new view
-            UITableView *view = [[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds];
-            view.delegate   = self;
-            view.dataSource = self;
-
-            // Pushing a view on the sidebar
-            [_revealView.sidebarView pushView:view animated:YES];
-            [view release];
-        } else {
-            
-            // Popping a view from the sidebar
-            [_revealView.sidebarView popViewAnimated:YES];
-            
-            UITableView *previousView = (UITableView *)[_revealView.sidebarView topView];
-            [previousView deselectRowAtIndexPath:[previousView indexPathForSelectedRow] animated:YES];
+- (UITableViewCell *)datasource:(JTTableViewDatasource *)datasource tableView:(UITableView *)tableView cellForObject:(NSObject *)object {
+    if ([object conformsToProtocol:@protocol(JTTableViewCellTypeExpandable)]) {
+        static NSString *cellIdentifier = @"expandable";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if ( ! cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:cellIdentifier] autorelease];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
+        cell.textLabel.text = [(id <JTTableViewCellTypeExpandable>)object title];
+        return cell;
+    } else if ([object conformsToProtocol:@protocol(JTTableViewCellTypeBase)]) {
+        static NSString *cellIdentifier = @"base";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if ( ! cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:cellIdentifier] autorelease];
+        }
+        cell.textLabel.text = [(id <JTTableViewCellTypeBase>)object title];  
+        return cell;
     }
+    return nil;
 }
+
 
 @end

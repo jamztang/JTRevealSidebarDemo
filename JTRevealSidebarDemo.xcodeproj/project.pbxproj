@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A486BB31447526700617FE2 /* JTTableViewCellTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A486BB21447526700617FE2 /* JTTableViewCellTypes.m */; };
 		1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89988C1445FBDB001C5FFB /* JTNavigationView.m */; };
+		1A89989E14461B4C001C5FFB /* JTTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89989D14461B4C001C5FFB /* JTTableViewDatasource.m */; };
 		1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
 		1AD4708814446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		1AD4708A14446392002EE1B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
@@ -36,8 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A486BB11447526700617FE2 /* JTTableViewCellTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewCellTypes.h; sourceTree = "<group>"; };
+		1A486BB21447526700617FE2 /* JTTableViewCellTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellTypes.m; sourceTree = "<group>"; };
 		1A89988B1445FBDB001C5FFB /* JTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationView.h; sourceTree = "<group>"; };
 		1A89988C1445FBDB001C5FFB /* JTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationView.m; sourceTree = "<group>"; };
+		1A89989C14461B4C001C5FFB /* JTTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewDatasource.h; sourceTree = "<group>"; };
+		1A89989D14461B4C001C5FFB /* JTTableViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewDatasource.m; sourceTree = "<group>"; };
 		1AD4708114446391002EE1B0 /* JTRevealSidebarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JTRevealSidebarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD4708514446391002EE1B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AD4708714446391002EE1B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +174,10 @@
 				1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */,
 				1A89988B1445FBDB001C5FFB /* JTNavigationView.h */,
 				1A89988C1445FBDB001C5FFB /* JTNavigationView.m */,
+				1A89989C14461B4C001C5FFB /* JTTableViewDatasource.h */,
+				1A89989D14461B4C001C5FFB /* JTTableViewDatasource.m */,
+				1A486BB11447526700617FE2 /* JTTableViewCellTypes.h */,
+				1A486BB21447526700617FE2 /* JTTableViewCellTypes.m */,
 			);
 			path = JTRevealSidebar;
 			sourceTree = "<group>";
@@ -284,6 +294,8 @@
 				1AD4709914446392002EE1B0 /* ViewController.m in Sources */,
 				1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */,
 				1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */,
+				1A89989E14461B4C001C5FFB /* JTTableViewDatasource.m in Sources */,
+				1A486BB31447526700617FE2 /* JTTableViewCellTypes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
