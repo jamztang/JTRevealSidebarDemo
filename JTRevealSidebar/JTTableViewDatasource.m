@@ -28,15 +28,38 @@
 
 - (NSArray *)sections {
     if ( ! sections) {
-        [self.delegate datasourceDidExpandSection:self];
+        [self.delegate datasourceShouldFetch:self];
         sections = [[NSArray arrayWithObject:
                      [NSArray arrayWithObject:
-                      [JTTableViewCellTypeBase baseWithTitle:@"Loading..."]
+                      [JTTableViewCellTypeLoader loader]
                       ]
                      ]
                     retain];
     }
     return sections;
+}
+
+- (void)replaceLoader:(id <JTTableViewCellTypeLoader>)loader withObjects:(NSArray *)objects {
+    NSUInteger section = 0;
+    NSUInteger row = 0;
+    NSUInteger sectionCount = [self.sections count];
+    for (section = 0; section < sectionCount; section++) {
+        NSArray *array = [self.sections objectAtIndex:section];
+        row = [array indexOfObject:loader];
+        if (row != NSNotFound) {
+            break;
+        }
+    }
+    if (row != NSNotFound) {
+        NSMutableArray *copied = [[self.sections mutableCopy] autorelease];
+        NSMutableArray *targetSection = [[[copied objectAtIndex:section] mutableCopy] autorelease];
+        [targetSection removeObjectAtIndex:row];
+        [targetSection insertObjects:objects atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(row, [objects count])]];
+        
+        [copied replaceObjectAtIndex:section withObject:targetSection];
+        
+        self.sections = copied;
+    }
 }
 
 #pragma mark UITableViewDatasource
@@ -53,6 +76,11 @@
     UITableViewCell *cell = [self.delegate datasource:self
                                             tableView:tableView
                                         cellForObject:[self objectAtIndexPath:indexPath]];
+    if ([[self objectAtIndexPath:indexPath] conformsToProtocol:@protocol(JTTableViewCellTypeLoader)]) {
+        if ([(id <JTTableViewCellTypeLoader>)[self objectAtIndexPath:indexPath] datasource]) {
+            [self.delegate datasource:self shouldFetchLoader:(id)[self objectAtIndexPath:indexPath]];
+        }
+    }
     return cell;
 }
 

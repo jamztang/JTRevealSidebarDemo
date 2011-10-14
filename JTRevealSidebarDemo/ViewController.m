@@ -11,6 +11,7 @@
 #import "JTNavigationView.h"
 #import "JTTableViewDatasource.h"
 #import "JTTableViewCellTypes.h"
+#import "JTTableViewCellFactory.h"
 
 typedef enum {
     JTTableRowPush,
@@ -37,8 +38,10 @@ typedef enum {
     _revealView = [[JTRevealSidebarView defaultViewWithFrame:self.view.bounds] retain];
     _datasource = [[JTTableViewDatasource alloc] init];
     _datasource.sections = [NSArray arrayWithObject:
-                            [NSArray arrayWithObject:
-                             [JTTableViewCellTypeExpandable expandableWithTitle:@"Friends" url:@"friends"]]];
+                            [NSArray arrayWithObjects:
+                             [JTTableViewCellTypeExpandable expandableWithTitle:@"Friends" url:@"friends"],
+                             [JTTableViewCellTypeExpandable expandableWithTitle:@"Pagination" url:@"pagination"],
+                             nil]];
     _datasource.delegate = self;
     
     // Setup a view to be the rootView of the sidebar
@@ -93,8 +96,8 @@ typedef enum {
         datasource.sections = [NSArray arrayWithObject:
                                [NSArray arrayWithObjects:
                                 [JTTableViewCellTypeBack baseWithTitle:@"Back"],
-                                [JTTableViewCellTypeBase baseWithTitle:@"Name: Mary"],
-                                [JTTableViewCellTypeBase baseWithTitle:@"Age: 22"],
+                                @"Name: Mary",
+                                @"Age: 22",
                                 nil
                                 ]];
         [(id)[_revealView.sidebarView topView] reloadData];
@@ -102,10 +105,52 @@ typedef enum {
         datasource.sections = [NSArray arrayWithObject:
                                [NSArray arrayWithObjects:
                                 [JTTableViewCellTypeBack baseWithTitle:@"Back"],
-                                [JTTableViewCellTypeBase baseWithTitle:@"Name: James"],
-                                [JTTableViewCellTypeBase baseWithTitle:@"Age: 23"],
+                                @"Name: James",
+                                @"Age: 23",
                                 nil
                                 ]];
+        [(id)[_revealView.sidebarView topView] reloadData];
+    } else if ([url isEqualToString:@"pagination"]) {
+        datasource.sections = [NSArray arrayWithObject:
+                               [NSArray arrayWithObjects:
+                                [JTTableViewCellTypeBack baseWithTitle:@"Back"],
+                                [JTTableViewCellTypeLoader loaderWithUrl:@"page1" parentDatasource:datasource],
+                                nil
+                                ]];
+        [(id)[_revealView.sidebarView topView] reloadData];
+    }
+}
+
+- (void)simulateFetchingLoader:(id <JTTableViewCellTypeLoader>)loader {
+    NSString *url = [[loader sourceInfo] objectForKey:@"url"];
+    if ([url isEqualToString:@"page1"]) {
+
+        JTTableViewDatasource *datasource = [loader datasource];
+        
+        [datasource replaceLoader:loader
+                      withObjects:[NSArray arrayWithObjects:
+                                   @"1",
+                                   @"2",
+                                   @"3",
+                                   @"4",
+                                   @"5",
+                                   [JTTableViewCellTypeLoader loaderWithUrl:@"page2" parentDatasource:[loader datasource]],
+                                   nil]];
+        [(id)[_revealView.sidebarView topView] reloadData];
+
+    } else if ([url isEqualToString:@"page2"]) {
+        
+        JTTableViewDatasource *datasource = [loader datasource];
+        
+        [datasource replaceLoader:loader
+                      withObjects:[NSArray arrayWithObjects:
+                                   @"6",
+                                   @"7",
+                                   @"8",
+                                   @"9",
+                                   @"0",
+                                   [JTTableViewCellTypeLoader loaderWithUrl:@"page1" parentDatasource:[loader datasource]],
+                                   nil]];
         [(id)[_revealView.sidebarView topView] reloadData];
     }
 }
@@ -115,8 +160,12 @@ typedef enum {
 
 @implementation ViewController (UITableView)
 
-- (void)datasourceDidExpandSection:(JTTableViewDatasource *)datasource {
-    [self performSelector:@selector(simulateFetchingDatasource:) withObject:datasource afterDelay:2];
+- (void)datasource:(JTTableViewDatasource *)datasource shouldFetchLoader:(id<JTTableViewCellTypeLoader>)loader {
+    [self performSelector:@selector(simulateFetchingLoader:) withObject:loader afterDelay:1];
+}
+
+- (void)datasourceShouldFetch:(JTTableViewDatasource *)datasource {
+    [self performSelector:@selector(simulateFetchingDatasource:) withObject:datasource afterDelay:1];
 }
 
 - (void)datasource:(JTTableViewDatasource *)datasource tableView:(UITableView *)tableView didSelectObject:(NSObject *)object {
@@ -155,6 +204,13 @@ typedef enum {
                                            reuseIdentifier:cellIdentifier] autorelease];
         }
         cell.textLabel.text = [(id <JTTableViewCellTypeBase>)object title];  
+        return cell;
+    } else if ([object conformsToProtocol:@protocol(JTTableViewCellTypeLoader)]) {
+        static NSString *cellIdentifier = @"loader";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if ( ! cell) {
+            cell = [JTTableViewCellFactory loaderCellWithIdentifier:cellIdentifier];
+        }
         return cell;
     }
     return nil;

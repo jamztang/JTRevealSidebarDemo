@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A486BB31447526700617FE2 /* JTTableViewCellTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A486BB21447526700617FE2 /* JTTableViewCellTypes.m */; };
+		1A486BB61448A47400617FE2 /* JTTableViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A486BB51448A47400617FE2 /* JTTableViewCellFactory.m */; };
 		1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89988C1445FBDB001C5FFB /* JTNavigationView.m */; };
 		1A89989E14461B4C001C5FFB /* JTTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89989D14461B4C001C5FFB /* JTTableViewDatasource.m */; };
 		1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		1A486BB11447526700617FE2 /* JTTableViewCellTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewCellTypes.h; sourceTree = "<group>"; };
 		1A486BB21447526700617FE2 /* JTTableViewCellTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellTypes.m; sourceTree = "<group>"; };
+		1A486BB41448A47400617FE2 /* JTTableViewCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewCellFactory.h; sourceTree = "<group>"; };
+		1A486BB51448A47400617FE2 /* JTTableViewCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellFactory.m; sourceTree = "<group>"; };
 		1A89988B1445FBDB001C5FFB /* JTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationView.h; sourceTree = "<group>"; };
 		1A89988C1445FBDB001C5FFB /* JTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationView.m; sourceTree = "<group>"; };
 		1A89989C14461B4C001C5FFB /* JTTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewDatasource.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				1A89989D14461B4C001C5FFB /* JTTableViewDatasource.m */,
 				1A486BB11447526700617FE2 /* JTTableViewCellTypes.h */,
 				1A486BB21447526700617FE2 /* JTTableViewCellTypes.m */,
+				1A486BB41448A47400617FE2 /* JTTableViewCellFactory.h */,
+				1A486BB51448A47400617FE2 /* JTTableViewCellFactory.m */,
 			);
 			path = JTRevealSidebar;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */,
 				1A89989E14461B4C001C5FFB /* JTTableViewDatasource.m in Sources */,
 				1A486BB31447526700617FE2 /* JTTableViewCellTypes.m in Sources */,
+				1A486BB61448A47400617FE2 /* JTTableViewCellFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

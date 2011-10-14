@@ -7,7 +7,7 @@
  */
 
 #import <Foundation/Foundation.h>
-
+@protocol JTTableViewCellTypeLoader;
 @protocol JTTableViewDatasourceDelegate;
 
 @interface JTTableViewDatasource : NSObject <UITableViewDelegate, UITableViewDataSource>
@@ -15,6 +15,8 @@
 @property (nonatomic, assign) id <JTTableViewDatasourceDelegate> delegate;
 @property (nonatomic, retain) NSDictionary *sourceInfo;
 @property (nonatomic, retain) NSArray *sections;
+
+- (void)replaceLoader:(id <JTTableViewCellTypeLoader>)loader withObjects:(NSArray *)objects;
 
 @end
 
@@ -31,6 +33,7 @@
                       tableView:(UITableView *)tableView
                   cellForObject:(NSObject *)object;
 
-- (void)datasourceDidExpandSection:(JTTableViewDatasource *)datasource;
+- (void)datasourceShouldFetch:(JTTableViewDatasource *)datasource;
+- (void)datasource:(JTTableViewDatasource *)datasource shouldFetchLoader:(id <JTTableViewCellTypeLoader>)loader;
 
 @end

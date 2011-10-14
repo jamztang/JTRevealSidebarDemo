@@ -39,3 +39,27 @@
 
 @implementation JTTableViewCellTypeBack
 @end
+
+@implementation JTTableViewCellTypeLoader
+@synthesize datasource, sourceInfo;
++ (JTTableViewCellTypeLoader *)loader {
+    return [self loaderWithUrl:nil parentDatasource:nil];
+}
++ (JTTableViewCellTypeLoader *)loaderWithUrl:(NSString *)url parentDatasource:(JTTableViewDatasource *)datasource {
+    JTTableViewCellTypeLoader *loader = [[[self class] alloc] init];
+    if (url && datasource) {
+        loader.sourceInfo = [NSDictionary dictionaryWithObject:url forKey:@"url"];
+        loader.datasource = datasource;
+    }
+    return [loader autorelease];
+}
+@end
+
+
+#pragma mark Generic Data types
+
+@implementation NSString (JTTableViewCellType)
+- (NSString *)title {
+    return self;
+}
+@end
