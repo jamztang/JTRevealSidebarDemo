@@ -23,6 +23,9 @@
 		1AD470B114446392002EE1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD470AF14446392002EE1B0 /* InfoPlist.strings */; };
 		1AD470B414446392002EE1B0 /* JTRevealSidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */; };
 		1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */; };
+		1AE7FCB4144F43020050B97E /* JTTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCB3144F43020050B97E /* JTTableViewDatasource.m */; };
+		1AE7FCB8144F461C0050B97E /* JTTableViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCB7144F461C0050B97E /* JTTableViewCellFactory.m */; };
+		1AE7FCBB144F4BAD0050B97E /* JTTableViewCellModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCBA144F4BAD0050B97E /* JTTableViewCellModal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,12 @@
 		1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTRevealSidebarDemoTests.m; sourceTree = "<group>"; };
 		1AD470BE144463B4002EE1B0 /* JTRevealSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarView.h; sourceTree = "<group>"; };
 		1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRevealSidebarView.m; sourceTree = "<group>"; };
+		1AE7FCB2144F43020050B97E /* JTTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewDatasource.h; sourceTree = "<group>"; };
+		1AE7FCB3144F43020050B97E /* JTTableViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewDatasource.m; sourceTree = "<group>"; };
+		1AE7FCB6144F461C0050B97E /* JTTableViewCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewCellFactory.h; sourceTree = "<group>"; };
+		1AE7FCB7144F461C0050B97E /* JTTableViewCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellFactory.m; sourceTree = "<group>"; };
+		1AE7FCB9144F4BAD0050B97E /* JTTableViewCellModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewCellModal.h; sourceTree = "<group>"; };
+		1AE7FCBA144F4BAD0050B97E /* JTTableViewCellModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellModal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +177,12 @@
 				1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */,
 				1A89988B1445FBDB001C5FFB /* JTNavigationView.h */,
 				1A89988C1445FBDB001C5FFB /* JTNavigationView.m */,
+				1AE7FCB2144F43020050B97E /* JTTableViewDatasource.h */,
+				1AE7FCB3144F43020050B97E /* JTTableViewDatasource.m */,
+				1AE7FCB6144F461C0050B97E /* JTTableViewCellFactory.h */,
+				1AE7FCB7144F461C0050B97E /* JTTableViewCellFactory.m */,
+				1AE7FCB9144F4BAD0050B97E /* JTTableViewCellModal.h */,
+				1AE7FCBA144F4BAD0050B97E /* JTTableViewCellModal.m */,
 			);
 			path = JTRevealSidebar;
 			sourceTree = "<group>";
@@ -284,6 +299,9 @@
 				1AD4709914446392002EE1B0 /* ViewController.m in Sources */,
 				1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */,
 				1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */,
+				1AE7FCB4144F43020050B97E /* JTTableViewDatasource.m in Sources */,
+				1AE7FCB8144F461C0050B97E /* JTTableViewCellFactory.m in Sources */,
+				1AE7FCBB144F4BAD0050B97E /* JTTableViewCellModal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,16 +9,28 @@
 #import "ViewController.h"
 #import "JTRevealSidebarView.h"
 #import "JTNavigationView.h"
+#import "JTTableViewDatasource.h"
+#import "JTTableViewCellModal.h"
+#import "JTTableViewCellFactory.h"
 
 typedef enum {
-    JTTableRowPush,
-    JTTableRowsCount
-} JTTableRow;
+    JTTableRowTypeBack,
+} JTTableRowTypes;
 
-@interface ViewController (UITableView) <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController (UITableView) <JTTableViewDatasourceDelegate>
 @end
 
 @implementation ViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _datasource = [[JTTableViewDatasource alloc] init];
+        _datasource.sourceInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"root", @"url", nil];
+        _datasource.delegate   = self;
+    }
+    return self;
+}
 
 - (void)dealloc {
     [_revealView release];
@@ -30,14 +42,14 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Create a default style RevealSidebarView
     _revealView = [[JTRevealSidebarView defaultViewWithFrame:self.view.bounds] retain];
     
     // Setup a view to be the rootView of the sidebar
     UITableView *tableView = [[[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds] autorelease];
-    tableView.delegate = self;
-    tableView.dataSource = self;
+    tableView.delegate   = _datasource;
+    tableView.dataSource = _datasource;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_revealView.sidebarView pushView:tableView animated:NO];
 
@@ -71,64 +83,113 @@ typedef enum {
     return YES;
 }
 
+#pragma mark Helper
+
+- (void)simulateDidSucceedFetchingDatasource:(JTTableViewDatasource *)datasource {
+    NSString *url = [datasource.sourceInfo objectForKey:@"url"];
+    if ([url isEqualToString:@"root"]) {
+        [datasource configureSingleSectionWithArray:
+         [NSArray arrayWithObjects:
+          [JTTableViewCellModalCustom modalWithInfo:
+           [NSDictionary dictionaryWithObjectsAndKeys:
+            @"Push", @"title",
+            [JTTableViewDatasource dynamicDatasourceWithDelegate:self
+                                                      sourceInfo:
+             [NSDictionary dictionaryWithObjectsAndKeys:@"push", @"url", nil]], @"datasource", nil]],
+          nil]
+         ];
+    } else if ([url isEqualToString:@"push"]) {
+        [datasource configureSingleSectionWithArray:
+         [NSArray arrayWithObject:
+          [JTTableViewCellModalSimpleType modalWithTitle:@"Back" type:JTTableRowTypeBack]
+          ]
+         ];
+    } else {
+        NSAssert(NO, @"not handled!", nil);
+    }
+}
+
+- (void)loadDatasourceSection:(JTTableViewDatasource *)datasource {
+    [self performSelector:@selector(simulateDidSucceedFetchingDatasource:)
+               withObject:datasource
+               afterDelay:1];
+}
+
 @end
 
 
 @implementation ViewController (UITableView)
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return JTTableRowsCount;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"cellIdentifier";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+- (BOOL)datasourceShouldLoad:(JTTableViewDatasource *)datasource {
+    if ([datasource.sourceInfo objectForKey:@"url"]) {
+        [self loadDatasourceSection:datasource];
+        return YES;
+    } else {
+        return NO;
     }
+}
 
-    switch (indexPath.row) {
-        case JTTableRowPush:
-            if ([[_revealView.sidebarView views] count] == 1) { // If only root view, we don't show Back button
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                cell.textLabel.text = @"Push";
-            } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
-                cell.textLabel.text = @"Back";
+- (UITableViewCell *)datasource:(JTTableViewDatasource *)datasource tableView:(UITableView *)tableView cellForObject:(NSObject *)object {
+    if ([object conformsToProtocol:@protocol(JTTableViewCellModalLoadingIndicator)]) {
+        static NSString *cellIdentifier = @"loadingCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            cell = [JTTableViewCellFactory loaderCellWithIdentifier:cellIdentifier];
+        }
+        return cell;
+    } else if ([object conformsToProtocol:@protocol(JTTableViewCellModal)]) {
+        static NSString *cellIdentifier = @"titleCell";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        }
+        cell.textLabel.text = [(id <JTTableViewCellModal>)object title];
+        return cell;
+    } else if ([object conformsToProtocol:@protocol(JTTableViewCellModalCustom)]) {
+        id <JTTableViewCellModalCustom> custom = (id)object;
+        JTTableViewDatasource *datasource = (JTTableViewDatasource *)[[custom info] objectForKey:@"datasource"];
+        if (datasource) {
+            static NSString *cellIdentifier = @"datasourceCell";
+            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
             }
-            break;
-        default:
-            break;
-    }
-
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == JTTableRowPush) {
-        if ([[_revealView.sidebarView views] count] == 1) { // If only root view, we push a new view
-            UITableView *view = [[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds];
-            view.delegate   = self;
-            view.dataSource = self;
-
-            // Pushing a view on the sidebar
-            [_revealView.sidebarView pushView:view animated:YES];
-            [view release];
-        } else {
-            
-            // Popping a view from the sidebar
-            [_revealView.sidebarView popViewAnimated:YES];
-            
-            UITableView *previousView = (UITableView *)[_revealView.sidebarView topView];
-            [previousView deselectRowAtIndexPath:[previousView indexPathForSelectedRow] animated:YES];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.text = [[custom info] objectForKey:@"title"];
+            return cell;
         }
     }
+    return nil;
+}
+
+- (void)datasource:(JTTableViewDatasource *)datasource tableView:(UITableView *)tableView didSelectObject:(NSObject *)object {
+    if ([object conformsToProtocol:@protocol(JTTableViewCellModalCustom)]) {
+        id <JTTableViewCellModalCustom> custom = (id)object;
+        JTTableViewDatasource *datasource = (JTTableViewDatasource *)[[custom info] objectForKey:@"datasource"];
+        if (datasource) {
+            UITableView *tableView = [[[UITableView alloc] initWithFrame:_revealView.sidebarView.bounds] autorelease];
+            tableView.delegate   = datasource;
+            tableView.dataSource = datasource;
+            tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+            [_revealView.sidebarView pushView:tableView animated:YES];
+        }
+    } else if ([object conformsToProtocol:@protocol(JTTableViewCellModalSimpleType)]) {        
+        switch ([(JTTableViewCellModalSimpleType *)object type]) {
+            case JTTableRowTypeBack:
+                [_revealView.sidebarView popViewAnimated:YES];
+                UITableView *tableView = (UITableView *)[_revealView.sidebarView topView];
+                [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+- (void)datasource:(JTTableViewDatasource *)datasource sectionsDidChanged:(NSArray *)oldSections {
+    [(UITableView *)[_revealView.sidebarView topView] reloadData];
 }
 
 @end
