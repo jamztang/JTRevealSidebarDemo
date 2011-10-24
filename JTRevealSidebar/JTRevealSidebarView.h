@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic, retain) JTNavigationView *sidebarView;
-@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) JTNavigationView *contentView;
 
 - (void)revealSidebar:(BOOL)shouldReveal;
 - (BOOL)isSidebarShowing;

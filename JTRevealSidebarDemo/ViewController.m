@@ -15,6 +15,7 @@
 
 typedef enum {
     JTTableRowTypeBack,
+    JTTableRowTypePushContentView,
 } JTTableRowTypes;
 
 @interface ViewController (UITableView) <JTTableViewDatasourceDelegate>
@@ -54,14 +55,16 @@ typedef enum {
     [_revealView.sidebarView pushView:tableView animated:NO];
 
     // Construct a toggle button for our contentView and add into it
-    UIButton *toggleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    {
-        [toggleButton setTitle:@"Toggle" forState:UIControlStateNormal];
-        [toggleButton sizeToFit];
-        [toggleButton addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    
-    [_revealView.contentView addSubview:toggleButton];
+//    UIButton *toggleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    {
+//        [toggleButton setTitle:@"Toggle" forState:UIControlStateNormal];
+//        [toggleButton sizeToFit];
+//        toggleButton.frame = CGRectOffset(toggleButton.frame, 4, 50);
+//        [toggleButton addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    [_revealView.contentView addSubview:toggleButton];
+
+    _revealView.contentView.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(toggleButtonPressed:)] autorelease];
     
     [self.view addSubview:_revealView];
 }
@@ -96,6 +99,10 @@ typedef enum {
             [JTTableViewDatasource dynamicDatasourceWithDelegate:self
                                                       sourceInfo:
              [NSDictionary dictionaryWithObjectsAndKeys:@"push", @"url", nil]], @"datasource", nil]],
+          
+          [JTTableViewCellModalSimpleType modalWithTitle:@"ViewController1" type:JTTableRowTypePushContentView],
+          [JTTableViewCellModalSimpleType modalWithTitle:@"ViewController2" type:JTTableRowTypePushContentView],
+
           nil]
          ];
     } else if ([url isEqualToString:@"push"]) {
@@ -182,6 +189,15 @@ typedef enum {
                 UITableView *tableView = (UITableView *)[_revealView.sidebarView topView];
                 [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
                 break;
+            case JTTableRowTypePushContentView:
+            {
+                UIView *view = [[UIView alloc] init];
+                view.backgroundColor = [UIColor redColor];
+                view.title = [(JTTableViewCellModalSimpleType *)object title];
+                [_revealView.contentView pushView:view animated:YES];
+                [view release];
+                [_revealView revealSidebar:NO];
+            }
             default:
                 break;
         }

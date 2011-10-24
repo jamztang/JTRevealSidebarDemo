@@ -8,7 +8,7 @@ Demo
 ----
 ![Not revealed](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo1.png)
 ![Revealed](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo2.png)
-
+![Pushed ViewController1](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo3.png)
 
 Motivation
 ----------
@@ -68,11 +68,17 @@ Just #import the JTRevealSidebarView.h header, and construct a JTRevealSidebarVi
 
 
 
+Update Logs
+-----------
+
+- Added JTTableViewDatasource
+- Added push/pop mechanism on main content view
+
+
 Potential Future enhancements
 -------------------
 
 - Custom navigation bar
-- Push/Pop view on content view
 - Different styles of tableViewCells
 - Dragging gesture on contentView to toggle sidebar
 - and more.

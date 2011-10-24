@@ -11,11 +11,31 @@
 
 @interface JTNavigationView : UIView {
     NSMutableArray *_views;
+    UINavigationBar *_navigationBar;
+    UINavigationItem *_navigationItem;
+    
+    struct {
+        unsigned int isNavigationBarHidden:1;
+    } _navigationViewFlags;
 }
+
 
 - (void)pushView:(UIView *)view animated:(BOOL)animated;
 - (UIView *)popViewAnimated:(BOOL)animated;
 - (UIView *)topView;
 - (NSArray *)views;
+
+// Navigation Bar
+- (void)setNavigationBarHidden:(BOOL)hidden animated:(BOOL)animated;        // Default NO
+
+@end
+
+
+
+@interface UIView (UINavigationControllerItem)
+
+@property(nonatomic, retain) UINavigationItem *navigationItem; // Created on-demand so that a view controller may customize its navigation appearance.
+
+@property (nonatomic, copy) NSString *title;
 
 @end
