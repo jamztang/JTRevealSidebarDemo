@@ -86,6 +86,14 @@ typedef enum {
     return YES;
 }
 
+- (void)pushContentView:(id)sender {
+    UIView *subview = [[UIView alloc] initWithFrame:CGRectZero];
+    subview.backgroundColor = [UIColor blueColor];
+    subview.title           = @"Pushed Subview";
+    [_revealView.contentView pushView:subview animated:YES];
+    [subview release];
+}
+
 #pragma mark Helper
 
 - (void)simulateDidSucceedFetchingDatasource:(JTTableViewDatasource *)datasource {
@@ -100,8 +108,8 @@ typedef enum {
                                                       sourceInfo:
              [NSDictionary dictionaryWithObjectsAndKeys:@"push", @"url", nil]], @"datasource", nil]],
           
-          [JTTableViewCellModalSimpleType modalWithTitle:@"ViewController1" type:JTTableRowTypePushContentView],
-          [JTTableViewCellModalSimpleType modalWithTitle:@"ViewController2" type:JTTableRowTypePushContentView],
+          [JTTableViewCellModalSimpleType modalWithTitle:@"ContentView1" type:JTTableRowTypePushContentView],
+          [JTTableViewCellModalSimpleType modalWithTitle:@"ContentView2" type:JTTableRowTypePushContentView],
 
           nil]
          ];
@@ -193,8 +201,16 @@ typedef enum {
             {
                 UIView *view = [[UIView alloc] init];
                 view.backgroundColor = [UIColor redColor];
+
+                // Create a push button to demonstrate pushing subviews in the main content view
+                UIButton *pushButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                [pushButton setTitle:@"Push" forState:UIControlStateNormal];
+                [pushButton addTarget:self action:@selector(pushContentView:) forControlEvents:UIControlEventTouchUpInside];
+                [pushButton sizeToFit];
+                [view addSubview:pushButton];
+                
                 view.title = [(JTTableViewCellModalSimpleType *)object title];
-                [_revealView.contentView pushView:view animated:YES];
+                [_revealView.contentView setRootView:view];
                 [view release];
                 [_revealView revealSidebar:NO];
             }

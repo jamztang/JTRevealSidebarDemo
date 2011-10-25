@@ -17,11 +17,18 @@
 
 @implementation JTNavigationView
 
-- (id)initWithFrame:(CGRect)frame
-{
+@synthesize rootView = _rootView;
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [self initWithFrame:frame animationStyle:JTNavigationViewAnimationStylePush];
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame animationStyle:(JTNavigationViewAnimationStyle)style {
     self = [super initWithFrame:frame];
     if (self) {
         _views = [[NSMutableArray alloc] init];
+        _animationStyle = style;
 
         // We will need to have 
         _navigationBar = [[JTNavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), DEFAULT_NAVIGATION_BAR_HEIGHT)];
@@ -34,7 +41,7 @@
         _navigationBar.delegate = self;
         _navigationItem = item;
         [item release];
-
+        
         _navigationViewFlags.isNavigationBarHidden = NO;
     }
     return self;
@@ -60,7 +67,9 @@
 
     view.transform = CGAffineTransformMakeTranslation(0, 0);
     if (existView) {
-        existView.transform = CGAffineTransformMakeTranslation(-CGRectGetWidth(self.frame), 0);
+        if (_animationStyle == JTNavigationViewAnimationStylePush) {
+            existView.transform = CGAffineTransformMakeTranslation(-CGRectGetWidth(self.frame), 0);
+        }
     }
     
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:view.title];
@@ -89,7 +98,9 @@
 
     view.transform = CGAffineTransformMakeTranslation(CGRectGetWidth(self.frame), 0);
     if (previousView) {
-        previousView.transform = CGAffineTransformMakeTranslation(0, 0);
+        if (_animationStyle == JTNavigationViewAnimationStylePush) {
+            previousView.transform = CGAffineTransformMakeTranslation(0, 0);
+        }
     }
 
     if (animated) {
@@ -112,9 +123,26 @@
     return _views;
 }
 
+- (void)setRootView:(UIView *)rootView {
+    [_rootView removeFromSuperview], [_rootView autorelease], _rootView = nil;
+    _rootView = [rootView retain];
+
+    for (UIView *view in _views) {
+        [self popViewAnimated:NO];
+    }
+    [_navigationBar setItems:[NSArray arrayWithObject:_navigationItem]];
+
+    _navigationItem.title = _rootView.title;
+    // Insert root view to be the bottom most index.
+    [self insertSubview:_rootView atIndex:0];
+}
+
+// Auto stretching the views to fit the visible bounds
 - (void)layoutSubviews {
     int yOffset = _navigationViewFlags.isNavigationBarHidden ? 0 : DEFAULT_NAVIGATION_BAR_HEIGHT;
-    ((UIView *)[_views lastObject]).frame = CGRectMake(0, yOffset, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) - yOffset);
+    CGRect bounds = CGRectMake(0, yOffset, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) - yOffset);
+    _rootView.frame = bounds;
+    ((UIView *)[_views lastObject]).frame = bounds;
 }
 
 // Navigation Bar

@@ -70,7 +70,7 @@
         revealView.sidebarView = sidebarView;
     }
     
-    JTNavigationView *contentView = [[[JTNavigationView alloc] initWithFrame:(CGRect){CGPointZero, frame.size}] autorelease];
+    JTNavigationView *contentView = [[[JTNavigationView alloc] initWithFrame:(CGRect){CGPointZero, frame.size} animationStyle:JTNavigationViewAnimationStyleCoverUp] autorelease];
     {
         contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         contentView.backgroundColor = [UIColor lightGrayColor];
