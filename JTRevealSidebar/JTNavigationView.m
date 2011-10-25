@@ -11,29 +11,8 @@
 
 #define DEFAULT_NAVIGATION_BAR_HEIGHT 44
 
-@protocol JTNavigationBarDelegate <NSObject>
-@optional
-- (void)willPopNavigationItemAnimated:(BOOL)animated;
-@end
 
-@interface JTNavigationBar : UINavigationBar
-
-@property (nonatomic, assign) id <JTNavigationBarDelegate> delegate2;
-@end
-
-@implementation JTNavigationBar
-@synthesize delegate2;
-
-- (UINavigationItem *)popNavigationItemAnimated:(BOOL)animated {
-    if ([delegate2 respondsToSelector:@selector(willPopNavigationItemAnimated:)]) {
-        [delegate2 willPopNavigationItemAnimated:animated];
-    }
-    return [super popNavigationItemAnimated:animated];
-}
-
-@end
-
-@interface JTNavigationView () <UINavigationBarDelegate, JTNavigationBarDelegate>
+@interface JTNavigationView () <JTNavigationBarDelegate>
 @end
 
 @implementation JTNavigationView
@@ -44,13 +23,15 @@
     if (self) {
         _views = [[NSMutableArray alloc] init];
 
+        // We will need to have 
         _navigationBar = [[JTNavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), DEFAULT_NAVIGATION_BAR_HEIGHT)];
-        [(JTNavigationBar *)_navigationBar setDelegate2:self];
+        _navigationBar.delegate = self;
         _navigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:_navigationBar];
         
         UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:self.title];
         [_navigationBar pushNavigationItem:item animated:NO];
+        _navigationBar.delegate = self;
         _navigationItem = item;
         [item release];
 
@@ -85,10 +66,7 @@
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:view.title];
     item.leftBarButtonItem = view.navigationItem.leftBarButtonItem;
     item.rightBarButtonItem = view.navigationItem.rightBarButtonItem;
-    [_navigationBar.backItem.leftBarButtonItem setTarget:self];
-    [_navigationBar.backItem.leftBarButtonItem setAction:@selector(popViewAnimated:)];
     [_navigationBar pushNavigationItem:item animated:animated];
-    _navigationBar.delegate = self;
 
     [item release];
 
@@ -162,16 +140,7 @@
     return _navigationItem;
 }
 
-//- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
-//    [self popViewAnimated:YES];
-//    [_navigationBar popNavigationItemAnimated:YES];
-//    [_navigationBar ]
-//    return NO;
-//}
-
-//- (void)navigationBar:(UINavigationBar *)navigationBar didPopItem:(UINavigationItem *)item {
-//    [self popViewAnimated:YES shouldPopNavigationItem:NO];
-//}
+#pragma mark JTNavigationBarDelegate
 
 - (void)willPopNavigationItemAnimated:(BOOL)animated {
     [self popViewAnimated:animated shouldPopNavigationItem:NO];

@@ -8,10 +8,11 @@
 
 
 #import <UIKit/UIKit.h>
+#import "JTNavigationBar.h"
 
-@interface JTNavigationView : UIView {
+@interface JTNavigationView : UIView <JTNavigationBarDelegate> {
     NSMutableArray *_views;
-    UINavigationBar *_navigationBar;
+    JTNavigationBar *_navigationBar;
     UINavigationItem *_navigationItem;
     
     struct {
@@ -34,8 +35,7 @@
 
 @interface UIView (UINavigationControllerItem)
 
-@property(nonatomic, retain) UINavigationItem *navigationItem; // Created on-demand so that a view controller may customize its navigation appearance.
-
+@property(nonatomic, retain) UINavigationItem *navigationItem;
 @property (nonatomic, copy) NSString *title;
 
 @end

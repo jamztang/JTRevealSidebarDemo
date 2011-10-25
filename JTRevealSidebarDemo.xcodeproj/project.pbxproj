@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89988C1445FBDB001C5FFB /* JTNavigationView.m */; };
+		1ACADFFA145720F4000F5E15 /* JTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACADFF9145720F4000F5E15 /* JTNavigationBar.m */; };
 		1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
 		1AD4708814446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		1AD4708A14446392002EE1B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		1A89988B1445FBDB001C5FFB /* JTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationView.h; sourceTree = "<group>"; };
 		1A89988C1445FBDB001C5FFB /* JTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationView.m; sourceTree = "<group>"; };
+		1ACADFF8145720F4000F5E15 /* JTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationBar.h; sourceTree = "<group>"; };
+		1ACADFF9145720F4000F5E15 /* JTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationBar.m; sourceTree = "<group>"; };
 		1AD4708114446391002EE1B0 /* JTRevealSidebarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JTRevealSidebarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD4708514446391002EE1B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AD4708714446391002EE1B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */,
 				1A89988B1445FBDB001C5FFB /* JTNavigationView.h */,
 				1A89988C1445FBDB001C5FFB /* JTNavigationView.m */,
+				1ACADFF8145720F4000F5E15 /* JTNavigationBar.h */,
+				1ACADFF9145720F4000F5E15 /* JTNavigationBar.m */,
 				1AE7FCB2144F43020050B97E /* JTTableViewDatasource.h */,
 				1AE7FCB3144F43020050B97E /* JTTableViewDatasource.m */,
 				1AE7FCB6144F461C0050B97E /* JTTableViewCellFactory.h */,
@@ -302,6 +307,7 @@
 				1AE7FCB4144F43020050B97E /* JTTableViewDatasource.m in Sources */,
 				1AE7FCB8144F461C0050B97E /* JTTableViewCellFactory.m in Sources */,
 				1AE7FCBB144F4BAD0050B97E /* JTTableViewCellModal.m in Sources */,
+				1ACADFFA145720F4000F5E15 /* JTNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +384,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,7 +402,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
