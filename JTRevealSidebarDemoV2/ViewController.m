@@ -36,10 +36,11 @@
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
 
-    self.label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 260, 30)];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 260, 60)];
     self.label.backgroundColor  = [UIColor clearColor];
     self.label.textColor        = [UIColor whiteColor];
     self.label.textAlignment    = UITextAlignmentCenter;
+    self.label.numberOfLines    = 2;
     [self.view addSubview:self.label];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ButtonMenu.png"]  style:UIBarButtonItemStyleBordered target:self action:@selector(revealLeftSidebar:)];
@@ -92,6 +93,7 @@
     NewViewController *controller = [[NewViewController alloc] init];
     controller.view.backgroundColor = [UIColor whiteColor];
     controller.title = @"NewViewController";
+    controller.label.text = @"Pushed NewViewController";
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -173,6 +175,7 @@
     controller.title = (NSString *)object;
     controller.leftSidebarViewController  = sidebarViewController;
     controller.leftSelectedIndexPath      = indexPath;
+    controller.label.text = [NSString stringWithFormat:@"Selected %@ from LeftSidebarViewController", (NSString *)object];
     sidebarViewController.sidebarDelegate = controller;
     [self.navigationController setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
 

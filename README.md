@@ -1,17 +1,17 @@
-JTRevealSidebar
+JTRevealSidebarV2
 ===============
 
-An iOS objective-c library template for mimic the sidebar layout of the new Facebook app.
-It's still in very early development state and doesn't have any functions, so please see it as demonstrating purpose.
-Caution! Use this carefully since a single view controller pattern may ultimately lead to a very large class manipulating all view transition logic in a single file.
-Please let us know any tips to split out and reduce unmaintainable circumstances.
+An iOS objective-c library template for mimic the sidebar layout of the new Facebook app and the Path app.
+JTRevealSidebarV2 is aimed to be a truly flexible and reusable solution for this which has been carefully implemented.
 
 Demo
 ----
-![Not revealed](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo1.png)
-![Revealed](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo2.png)
-![Pushed ContentView1](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo3.png)
-![Pushed Subview](https://github.com/mystcolor/JTRevealSidebarDemo/raw/master/demo4.png)
+![Initialized](https://github.com/mystcolor/JTRevealSidebarDemo/blob/JTRevealSidebarV2/demo1.png)
+![Left Revealed](https://github.com/mystcolor/JTRevealSidebarDemo/blob/JTRevealSidebarV2/demo2.png)
+![Left Selected](https://github.com/mystcolor/JTRevealSidebarDemo/blob/JTRevealSidebarV2/demo3.png)
+![Right Revealed](https://github.com/mystcolor/JTRevealSidebarDemo/blob/JTRevealSidebarV2/demo4.png)
+![New Pushed](https://github.com/mystcolor/JTRevealSidebarDemo/blob/JTRevealSidebarV2/demo5.png)
+![New Right Revealed](https://github.com/mystcolor/JTRevealSidebarDemo/blob/JTRevealSidebarV2/demo6.png)
 
 Motivation
 ----------
@@ -24,84 +24,7 @@ How To Use It
 
 ### Installation
 
-Include all files in JTRevealSidebar into your project.
-
-
-### Setting up with JTRevealSidebarView
-
-Just #import the JTRevealSidebarView.h header, and construct a JTRevealSidebarView, and add it to your viewController, (any subclass of UIViewController).
-
-    #import "JTRevealSidebarView.h"
-    #import "JTNavigationView.h"
-
-    ...
-
-
-    - (void)viewDidLoad
-    {
-        [super viewDidLoad];
-
-        // Create a default style RevealSidebarView
-        _revealView = [[JTRevealSidebarView defaultViewWithFrame:self.view.bounds] retain];
-        
-        // Setup a view to be the rootView of the sidebar
-        UITableView *tableView = ...;
-        [_revealView.sidebarView pushView:tableView animated:NO];
-
-        // Construct a toggle button for our contentView and add into it
-        UIButton *toggleButton = ...;
-        [_revealView.contentView addSubview:toggleButton];
-        
-        [self.view addSubview:_revealView];
-    }
-
-
-    - (void)toggleButtonPressed:(id)sender {
-        [_revealView revealSidebar: ! [_revealView isSidebarShowing]];
-    }
-
-
-### Interacting on the sidebar (JTNavigationView)
-
-    // Pushing a view on the sidebar
-    [_revealView.sidebarView pushView:view animated:YES];
-    
-    // Popping a view from the sidebar
-    [_revealView.sidebarView popViewAnimated:YES];
-
-
-### Interacting on the mainview (JTNavigationView)
-
-    // Setting the root view on the content view
-    UIView *yourView = ...;
-    // Setting appropriate title and navigationItems just like you'd did on a UINavigationController
-    yourView.title = ...;
-    yourView.navigationItem.rightBarButtonItem = ...;
-    _revealView.contentView.rootView = yourView;
-
-    // Pushing a view on the contentView
-    [_revealView.contentView pushView:view animated:YES];
-    
-    // Popping a view from the contentView
-    [_revealView.contentView popViewAnimated:YES];
-
-
-Update Logs
------------
-
-- Added JTNavigationViewAnimationStyle to mimic two different animation styles. (Default "Push" style in sidebar, and "CoverUp" style in content view)
-- Added rootView property on JTNavigationView
-- Added title/navigationItem associative property by category to let JTNavigationView to push appropriate navigation bar details
-
-- Added JTTableViewDatasource
-- Added push/pop mechanism on main content view
-
-
-Potential Future enhancements
--------------------
-
-- Custom navigation bar
-- Different styles of tableViewCells
-- Dragging gesture on contentView to toggle sidebar
-- and more.
+Include all files in JTRevealSidebarV2 into your project. 
+Please refer to JTRevealSidebarV2Demo/ViewController.m and AppDelegate.m at this moment,
+will be adding more info soon.
 
