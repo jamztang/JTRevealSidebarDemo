@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A057B6E1495400F0069D7AD /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A057B6D1495400F0069D7AD /* NewViewController.m */; };
+		1A057B7A149547F20069D7AD /* ButtonMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A057B78149547F10069D7AD /* ButtonMenu.png */; };
+		1A057B7B149547F20069D7AD /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A057B79149547F10069D7AD /* ButtonMenu@2x.png */; };
+		1A617E8D148FC4A6005EC465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
+		1A617E8E148FC4A6005EC465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
+		1A617E8F148FC4A6005EC465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
+		1A617E95148FC4A7005EC465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A617E93148FC4A7005EC465 /* InfoPlist.strings */; };
+		1A617E97148FC4A7005EC465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617E96148FC4A7005EC465 /* main.m */; };
+		1A617E9B148FC4A7005EC465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617E9A148FC4A7005EC465 /* AppDelegate.m */; };
+		1A617EA2148FC4A7005EC465 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD470A614446392002EE1B0 /* SenTestingKit.framework */; };
+		1A617EA3148FC4A7005EC465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
+		1A617EA4148FC4A7005EC465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
+		1A617EAC148FC4A7005EC465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A617EAA148FC4A7005EC465 /* InfoPlist.strings */; };
+		1A617EAF148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EAE148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m */; };
+		1A617EB9148FC4DB005EC465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EB8148FC4DB005EC465 /* ViewController.m */; };
+		1A617EC1148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC0148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m */; };
+		1A617EC4148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC3148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m */; };
+		1A81A5D814951CEF00BF03B8 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A81A5D714951CEE00BF03B8 /* SidebarViewController.m */; };
 		1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89988C1445FBDB001C5FFB /* JTNavigationView.m */; };
 		1ACADFFA145720F4000F5E15 /* JTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACADFF9145720F4000F5E15 /* JTNavigationBar.m */; };
 		1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
@@ -30,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1A617EA5148FC4A7005EC465 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD4707814446391002EE1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A617E8A148FC4A6005EC465;
+			remoteInfo = JTRevealSidebarDemoV2;
+		};
 		1AD470AA14446392002EE1B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AD4707814446391002EE1B0 /* Project object */;
@@ -40,6 +65,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A057B6C1495400F0069D7AD /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		1A057B6D1495400F0069D7AD /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		1A057B78149547F10069D7AD /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
+		1A057B79149547F10069D7AD /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
+		1A617E8B148FC4A6005EC465 /* JTRevealSidebarDemoV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JTRevealSidebarDemoV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A617E92148FC4A7005EC465 /* JTRevealSidebarDemoV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JTRevealSidebarDemoV2-Info.plist"; sourceTree = "<group>"; };
+		1A617E94148FC4A7005EC465 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1A617E96148FC4A7005EC465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A617E98148FC4A7005EC465 /* JTRevealSidebarDemoV2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JTRevealSidebarDemoV2-Prefix.pch"; sourceTree = "<group>"; };
+		1A617E99148FC4A7005EC465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1A617E9A148FC4A7005EC465 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1A617EA1148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JTRevealSidebarDemoV2Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A617EA9148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JTRevealSidebarDemoV2Tests-Info.plist"; sourceTree = "<group>"; };
+		1A617EAB148FC4A7005EC465 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1A617EAD148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarDemoV2Tests.h; sourceTree = "<group>"; };
+		1A617EAE148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTRevealSidebarDemoV2Tests.m; sourceTree = "<group>"; };
+		1A617EB7148FC4DB005EC465 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1A617EB8148FC4DB005EC465 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1A617EBB148FC5B4005EC465 /* JTRevealSidebarV2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarV2Delegate.h; sourceTree = "<group>"; };
+		1A617EBF148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
+		1A617EC0148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
+		1A617EC2148FC706005EC465 /* UIViewController+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
+		1A617EC3148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
+		1A81A5D614951CEE00BF03B8 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		1A81A5D714951CEE00BF03B8 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		1A89988B1445FBDB001C5FFB /* JTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationView.h; sourceTree = "<group>"; };
 		1A89988C1445FBDB001C5FFB /* JTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationView.m; sourceTree = "<group>"; };
 		1ACADFF8145720F4000F5E15 /* JTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationBar.h; sourceTree = "<group>"; };
@@ -75,6 +125,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1A617E88148FC4A6005EC465 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A617E8D148FC4A6005EC465 /* UIKit.framework in Frameworks */,
+				1A617E8E148FC4A6005EC465 /* Foundation.framework in Frameworks */,
+				1A617E8F148FC4A6005EC465 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A617E9D148FC4A7005EC465 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A617EA2148FC4A7005EC465 /* SenTestingKit.framework in Frameworks */,
+				1A617EA3148FC4A7005EC465 /* UIKit.framework in Frameworks */,
+				1A617EA4148FC4A7005EC465 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AD4707E14446391002EE1B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,12 +168,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A617E90148FC4A6005EC465 /* JTRevealSidebarDemoV2 */ = {
+			isa = PBXGroup;
+			children = (
+				1A617E99148FC4A7005EC465 /* AppDelegate.h */,
+				1A617E9A148FC4A7005EC465 /* AppDelegate.m */,
+				1A617EB7148FC4DB005EC465 /* ViewController.h */,
+				1A617EB8148FC4DB005EC465 /* ViewController.m */,
+				1A81A5D614951CEE00BF03B8 /* SidebarViewController.h */,
+				1A81A5D714951CEE00BF03B8 /* SidebarViewController.m */,
+				1A057B6C1495400F0069D7AD /* NewViewController.h */,
+				1A057B6D1495400F0069D7AD /* NewViewController.m */,
+				1A617E91148FC4A7005EC465 /* Supporting Files */,
+			);
+			path = JTRevealSidebarDemoV2;
+			sourceTree = "<group>";
+		};
+		1A617E91148FC4A7005EC465 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A057B78149547F10069D7AD /* ButtonMenu.png */,
+				1A057B79149547F10069D7AD /* ButtonMenu@2x.png */,
+				1A617E92148FC4A7005EC465 /* JTRevealSidebarDemoV2-Info.plist */,
+				1A617E93148FC4A7005EC465 /* InfoPlist.strings */,
+				1A617E96148FC4A7005EC465 /* main.m */,
+				1A617E98148FC4A7005EC465 /* JTRevealSidebarDemoV2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A617EA7148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1A617EAD148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.h */,
+				1A617EAE148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m */,
+				1A617EA8148FC4A7005EC465 /* Supporting Files */,
+			);
+			path = JTRevealSidebarDemoV2Tests;
+			sourceTree = "<group>";
+		};
+		1A617EA8148FC4A7005EC465 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A617EA9148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests-Info.plist */,
+				1A617EAA148FC4A7005EC465 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A617EBA148FC4FB005EC465 /* JTRevealSidebarV2 */ = {
+			isa = PBXGroup;
+			children = (
+				1A617EBB148FC5B4005EC465 /* JTRevealSidebarV2Delegate.h */,
+				1A617EBF148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.h */,
+				1A617EC0148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m */,
+				1A617EC2148FC706005EC465 /* UIViewController+JTRevealSidebarV2.h */,
+				1A617EC3148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m */,
+			);
+			path = JTRevealSidebarV2;
+			sourceTree = "<group>";
+		};
 		1AD4707614446391002EE1B0 = {
 			isa = PBXGroup;
 			children = (
 				1AD470BD144463B4002EE1B0 /* JTRevealSidebar */,
 				1AD4708B14446392002EE1B0 /* JTRevealSidebarDemo */,
 				1AD470AC14446392002EE1B0 /* JTRevealSidebarDemoTests */,
+				1A617EBA148FC4FB005EC465 /* JTRevealSidebarV2 */,
+				1A617E90148FC4A6005EC465 /* JTRevealSidebarDemoV2 */,
+				1A617EA7148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests */,
 				1AD4708414446391002EE1B0 /* Frameworks */,
 				1AD4708214446391002EE1B0 /* Products */,
 			);
@@ -114,6 +247,8 @@
 			children = (
 				1AD4708114446391002EE1B0 /* JTRevealSidebarDemo.app */,
 				1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */,
+				1A617E8B148FC4A6005EC465 /* JTRevealSidebarDemoV2.app */,
+				1A617EA1148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +330,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1A617E8A148FC4A6005EC465 /* JTRevealSidebarDemoV2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A617EB4148FC4A7005EC465 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemoV2" */;
+			buildPhases = (
+				1A617E87148FC4A6005EC465 /* Sources */,
+				1A617E88148FC4A6005EC465 /* Frameworks */,
+				1A617E89148FC4A6005EC465 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JTRevealSidebarDemoV2;
+			productName = JTRevealSidebarDemoV2;
+			productReference = 1A617E8B148FC4A6005EC465 /* JTRevealSidebarDemoV2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A617EA0148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A617EB5148FC4A7005EC465 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemoV2Tests" */;
+			buildPhases = (
+				1A617E9C148FC4A7005EC465 /* Sources */,
+				1A617E9D148FC4A7005EC465 /* Frameworks */,
+				1A617E9E148FC4A7005EC465 /* Resources */,
+				1A617E9F148FC4A7005EC465 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A617EA6148FC4A7005EC465 /* PBXTargetDependency */,
+			);
+			name = JTRevealSidebarDemoV2Tests;
+			productName = JTRevealSidebarDemoV2Tests;
+			productReference = 1A617EA1148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AD470B714446392002EE1B0 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemo" */;
@@ -253,11 +424,31 @@
 			targets = (
 				1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */,
 				1AD470A414446392002EE1B0 /* JTRevealSidebarDemoTests */,
+				1A617E8A148FC4A6005EC465 /* JTRevealSidebarDemoV2 */,
+				1A617EA0148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1A617E89148FC4A6005EC465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A617E95148FC4A7005EC465 /* InfoPlist.strings in Resources */,
+				1A057B7A149547F20069D7AD /* ButtonMenu.png in Resources */,
+				1A057B7B149547F20069D7AD /* ButtonMenu@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A617E9E148FC4A7005EC465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A617EAC148FC4A7005EC465 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AD4707F14446391002EE1B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +470,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A617E9F148FC4A7005EC465 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		1AD470A314446392002EE1B0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +499,28 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1A617E87148FC4A6005EC465 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A617E97148FC4A7005EC465 /* main.m in Sources */,
+				1A617E9B148FC4A7005EC465 /* AppDelegate.m in Sources */,
+				1A617EB9148FC4DB005EC465 /* ViewController.m in Sources */,
+				1A617EC1148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m in Sources */,
+				1A617EC4148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m in Sources */,
+				1A81A5D814951CEF00BF03B8 /* SidebarViewController.m in Sources */,
+				1A057B6E1495400F0069D7AD /* NewViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A617E9C148FC4A7005EC465 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A617EAF148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AD4707D14446391002EE1B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +548,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1A617EA6148FC4A7005EC465 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A617E8A148FC4A6005EC465 /* JTRevealSidebarDemoV2 */;
+			targetProxy = 1A617EA5148FC4A7005EC465 /* PBXContainerItemProxy */;
+		};
 		1AD470AB14446392002EE1B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */;
@@ -330,6 +561,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A617E93148FC4A7005EC465 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A617E94148FC4A7005EC465 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1A617EAA148FC4A7005EC465 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A617EAB148FC4A7005EC465 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		1AD4708E14446392002EE1B0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -365,6 +612,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1A617EB0148FC4A7005EC465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1A617EB1148FC4A7005EC465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1A617EB2148FC4A7005EC465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JTRevealSidebarDemoV2.app/JTRevealSidebarDemoV2";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemoV2Tests/JTRevealSidebarDemoV2Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1A617EB3148FC4A7005EC465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JTRevealSidebarDemoV2.app/JTRevealSidebarDemoV2";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Prefix.pch";
+				INFOPLIST_FILE = "JTRevealSidebarDemoV2Tests/JTRevealSidebarDemoV2Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		1AD470B514446392002EE1B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -469,6 +780,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1A617EB4148FC4A7005EC465 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemoV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A617EB0148FC4A7005EC465 /* Debug */,
+				1A617EB1148FC4A7005EC465 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A617EB5148FC4A7005EC465 /* Build configuration list for PBXNativeTarget "JTRevealSidebarDemoV2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A617EB2148FC4A7005EC465 /* Debug */,
+				1A617EB3148FC4A7005EC465 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1AD4707B14446391002EE1B0 /* Build configuration list for PBXProject "JTRevealSidebarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
