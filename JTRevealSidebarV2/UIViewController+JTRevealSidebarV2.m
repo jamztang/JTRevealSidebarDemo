@@ -83,7 +83,7 @@ static char *revealedStateKey;
 
 #define SIDEBAR_VIEW_TAG 10000
 
-@implementation UINavigationController (JTRevealSidebarV2Private)
+@implementation UIViewController (JTRevealSidebarV2Private)
 
 - (UIViewController *)selectedViewController {
     return self;
