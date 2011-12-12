@@ -99,6 +99,7 @@
 
 #pragma mark JTRevealSidebarDelegate
 
+// This is an examle to configure your sidebar view through a custom UIViewController
 - (UIView *)viewForLeftSidebar {
     CGRect mainFrame = [[UIScreen mainScreen] applicationFrame];
     UITableViewController *controller = self.leftSidebarViewController;
@@ -112,6 +113,7 @@
     return controller.view;
 }
 
+// This is an examle to configure your sidebar view without a UIViewController
 - (UIView *)viewForRightSidebar {
     CGRect mainFrame = [[UIScreen mainScreen] applicationFrame];
     UITableView *view = self.rightSidebarView;
