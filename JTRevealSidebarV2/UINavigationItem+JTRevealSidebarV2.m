@@ -1,10 +1,10 @@
-//
-//  UINavigationItem+JTRevealSidebarV2.m
-//  JTRevealSidebarDemo
-//
-//  Created by James Apple Tang on 8/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
-//
+/*
+ * This file is part of the JTRevealSidebar package.
+ * (c) James Tang <mystcolor@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 #import "UINavigationItem+JTRevealSidebarV2.h"
 #import <objc/runtime.h>
