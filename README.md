@@ -1,8 +1,10 @@
 JTRevealSidebarV2
 ===============
 
-An iOS objective-c library template for mimic the sidebar layout of the new Facebook app and the Path app.
-JTRevealSidebarV2 is aimed to be a truly flexible and reusable solution for this which has been carefully implemented.
+An iOS objective-c library template for mimic the sidebar layout of the new Facebook app and the Path app.  
+JTRevealSidebarV2 is aimed to be a truly flexible and reusable solution for this which has been carefully implemented.  
+
+It has been developed under iOS 4.3 and 5.0 devices, sample code has been built using ARC, but the library itself should be both ARC and non-ARC compatible.
 
 Demo
 ----
