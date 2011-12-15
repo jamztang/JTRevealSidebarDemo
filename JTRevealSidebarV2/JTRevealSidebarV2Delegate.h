@@ -13,5 +13,6 @@
 @optional
 - (UIView *)viewForLeftSidebar;
 - (UIView *)viewForRightSidebar;
+-(void)sidebarDidChangeState;
 
 @end
