@@ -32,24 +32,30 @@ static char *revealedStateKey;
         case JTRevealedStateNo:
             if (revealedState == JTRevealedStateLeft) {
                 [self revealLeftSidebar:YES];
-            } else {
+            } else if (revealedState == JTRevealedStateRight) {
                 [self revealRightSidebar:YES];
+            } else {
+                // Do Nothing
             }
             break;
         case JTRevealedStateLeft:
             if (revealedState == JTRevealedStateNo) {
                 [self revealLeftSidebar:NO];
-            } else {
+            } else if (revealedState == JTRevealedStateRight) {
                 [self revealLeftSidebar:NO];
                 [self revealRightSidebar:YES];
+            } else {
+                [self revealLeftSidebar:YES];
             }
             break;
         case JTRevealedStateRight:
             if (revealedState == JTRevealedStateNo) {
                 [self revealRightSidebar:NO];
-            } else {
+            } else if (revealedState == JTRevealedStateLeft) {
                 [self revealRightSidebar:NO];
                 [self revealLeftSidebar:YES];
+            } else {
+                [self revealRightSidebar:YES];
             }
         default:
             break;
@@ -62,6 +68,8 @@ static char *revealedStateKey;
 
 - (CGAffineTransform)baseTransform {
     CGAffineTransform baseTransform;
+    
+    return self.view.transform;
     switch (self.interfaceOrientation) {
         case UIInterfaceOrientationPortrait:
             baseTransform = CGAffineTransformIdentity;
@@ -104,16 +112,22 @@ static char *revealedStateKey;
 
     UIView *revealedView = [delegate viewForLeftSidebar];
     revealedView.tag = SIDEBAR_VIEW_TAG;
+    CGFloat width = CGRectGetWidth(revealedView.frame);
 
     if (showLeftSidebar) {
-        CGFloat width = CGRectGetWidth(revealedView.frame);
         [self.view.superview insertSubview:revealedView belowSubview:self.view];
         
         [UIView beginAnimations:@"" context:nil];
-        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
+//        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
+        
+        self.view.frame = CGRectOffset(self.view.frame, width, 0);
+
     } else {
         [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
-        self.view.transform = CGAffineTransformTranslate([self baseTransform], 0, 0);
+//        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
+        
+        self.view.frame = (CGRect){CGPointZero, self.view.frame.size};
+
 
         [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
         [UIView setAnimationDelegate:self];
@@ -135,16 +149,20 @@ static char *revealedStateKey;
 
     UIView *revealedView = [delegate viewForRightSidebar];
     revealedView.tag = SIDEBAR_VIEW_TAG;
+    CGFloat width = CGRectGetWidth(revealedView.frame);
+    revealedView.frame = (CGRect){self.view.frame.size.width - width, revealedView.frame.origin.y, revealedView.frame.size};
 
     if (showRightSidebar) {
-        CGFloat width = CGRectGetWidth(revealedView.frame);
         [self.view.superview insertSubview:revealedView belowSubview:self.view];
 
         [UIView beginAnimations:@"" context:nil];
-        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
+//        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
+        
+        self.view.frame = CGRectOffset(self.view.frame, -width, 0);
     } else {
         [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
-        self.view.transform = CGAffineTransformTranslate([self baseTransform], 0, 0);
+//        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
+        self.view.frame = (CGRect){CGPointZero, self.view.frame.size};
         
         [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
         [UIView setAnimationDelegate:self];

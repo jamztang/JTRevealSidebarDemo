@@ -101,6 +101,12 @@ Include all files in JTRevealSidebarV2/*.h and JTRevealSidebarV2/*.m into your p
 
     @end
 
+### Known Issues
+
+Orientation changing is not an officially completed feature, the main thing to fix is the rotation animation and the necessarity of the container created in AppDelegate. Please let me know if you've got any elegant solution and send me a pull request!  
+Go to JTRevealSidebarV2/ViewController.h and change EXPERIEMENTAL_ORIENTATION_SUPPORT to 1 for testing purpose.
+
+### Reminder
 
 Remember to check out the sample working code in JTRevealSidebarDemoV2/ViewController.m, feel free to provide feedback and pull requests. Thanks!
 

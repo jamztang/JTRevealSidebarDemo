@@ -64,12 +64,44 @@
     self.rightSidebarView = nil;
 }
 
+#if EXPERIEMENTAL_ORIENTATION_SUPPORT
+
 // Doesn't support rotating to other orientation at this moment
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return YES;
 }
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    _containerOrigin = self.navigationController.view.frame.origin;
+}
+
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    if (self.navigationController.revealedState != JTRevealedStateNo) {
+        self.navigationController.view.hidden = YES;
+        self.navigationController.view.alpha  = 0;
+    }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    self.navigationController.view.frame = (CGRect){_containerOrigin, self.navigationController.view.frame.size};
+    self.navigationController.view.hidden = NO;
+    self.navigationController.view.alpha  = 1;
+}
+
+- (NSString *)description {
+    NSString *logMessage = [NSString stringWithFormat:@"ViewController {"];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.view];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.navigationController.view];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.leftSidebarViewController.view];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.rightSidebarView];
+    logMessage = [logMessage stringByAppendingFormat:@"\n}"];
+    return logMessage;
+}
+
+#endif
 
 #pragma mark Action
 
@@ -109,6 +141,7 @@
         controller = self.leftSidebarViewController;
         controller.view.frame = CGRectMake(0, mainFrame.origin.y, 270, mainFrame.size.height);
         controller.title = @"LeftSidebarViewController";
+        controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     }
     return controller.view;
 }
@@ -121,6 +154,8 @@
         view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectMake(50, mainFrame.origin.y, 270, mainFrame.size.height)];
         view.dataSource = self;
         view.delegate   = self;
+        view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
+
     }
     return view;
 }
