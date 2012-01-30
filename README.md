@@ -26,7 +26,7 @@ How To Use It
 
 ### Installation
 
-Include all files in JTRevealSidebarV2/*.h and JTRevealSidebarV2/*.m into your project. 
+Include all header and implementation files in JTRevealSidebarV2/ into your project. 
 
 ### Setting up your first sidebar, configure your viewController and conform to the JTRevealSidebarV2Delegate
 
@@ -105,6 +105,9 @@ Include all files in JTRevealSidebarV2/*.h and JTRevealSidebarV2/*.m into your p
 
 Orientation changing is not an officially completed feature, the main thing to fix is the rotation animation and the necessarity of the container created in AppDelegate. Please let me know if you've got any elegant solution and send me a pull request!  
 Go to JTRevealSidebarV2/ViewController.h and change EXPERIEMENTAL_ORIENTATION_SUPPORT to 1 for testing purpose.
+
+31/1/2012 updated:  
+Improved orientation support with a better animation, now you needed to #import <QuartzCore/QuartzCore.h> in your project for this sake
 
 ### Reminder
 

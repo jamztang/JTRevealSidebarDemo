@@ -10,6 +10,7 @@
 		1A057B6E1495400F0069D7AD /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A057B6D1495400F0069D7AD /* NewViewController.m */; };
 		1A057B7A149547F20069D7AD /* ButtonMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A057B78149547F10069D7AD /* ButtonMenu.png */; };
 		1A057B7B149547F20069D7AD /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A057B79149547F10069D7AD /* ButtonMenu@2x.png */; };
+		1A0883FC14D6FEB500628D99 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0883FB14D6FEB500628D99 /* QuartzCore.framework */; };
 		1A617E8D148FC4A6005EC465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
 		1A617E8E148FC4A6005EC465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		1A617E8F148FC4A6005EC465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
@@ -69,6 +70,7 @@
 		1A057B6D1495400F0069D7AD /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		1A057B78149547F10069D7AD /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
 		1A057B79149547F10069D7AD /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
+		1A0883FB14D6FEB500628D99 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A617E8B148FC4A6005EC465 /* JTRevealSidebarDemoV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JTRevealSidebarDemoV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A617E92148FC4A7005EC465 /* JTRevealSidebarDemoV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JTRevealSidebarDemoV2-Info.plist"; sourceTree = "<group>"; };
 		1A617E94148FC4A7005EC465 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0883FC14D6FEB500628D99 /* QuartzCore.framework in Frameworks */,
 				1A617E8D148FC4A6005EC465 /* UIKit.framework in Frameworks */,
 				1A617E8E148FC4A6005EC465 /* Foundation.framework in Frameworks */,
 				1A617E8F148FC4A6005EC465 /* CoreGraphics.framework in Frameworks */,
@@ -256,6 +259,7 @@
 		1AD4708414446391002EE1B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A0883FB14D6FEB500628D99 /* QuartzCore.framework */,
 				1AD4708514446391002EE1B0 /* UIKit.framework */,
 				1AD4708714446391002EE1B0 /* Foundation.framework */,
 				1AD4708914446392002EE1B0 /* CoreGraphics.framework */,

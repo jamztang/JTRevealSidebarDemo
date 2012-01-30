@@ -13,6 +13,10 @@
 #import "NewViewController.h"
 #import "JTRevealSidebarV2Delegate.h"
 
+#if EXPERIEMENTAL_ORIENTATION_SUPPORT
+#import <QuartzCore/QuartzCore.h>
+#endif
+
 @interface ViewController (Private) <UITableViewDataSource, UITableViewDelegate, SidebarViewControllerDelegate>
 @end
 
@@ -77,18 +81,15 @@
     _containerOrigin = self.navigationController.view.frame.origin;
 }
 
-
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    if (self.navigationController.revealedState != JTRevealedStateNo) {
-        self.navigationController.view.hidden = YES;
-        self.navigationController.view.alpha  = 0;
-    }
+    self.navigationController.view.layer.bounds       = (CGRect){-_containerOrigin.x, _containerOrigin.y, self.navigationController.view.frame.size};
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    self.navigationController.view.frame = (CGRect){_containerOrigin, self.navigationController.view.frame.size};
-    self.navigationController.view.hidden = NO;
-    self.navigationController.view.alpha  = 1;
+    self.navigationController.view.frame              = (CGRect){_containerOrigin, self.navigationController.view.frame.size};
+    self.navigationController.view.layer.bounds       = (CGRect){CGPointZero, self.navigationController.view.frame.size};
+    
+    NSLog(@"%@", self);
 }
 
 - (NSString *)description {
@@ -97,6 +98,8 @@
     logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.navigationController.view];
     logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.leftSidebarViewController.view];
     logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.rightSidebarView];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.navigationController.navigationBar];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", NSStringFromCGRect([[UIApplication sharedApplication] statusBarFrame])];
     logMessage = [logMessage stringByAppendingFormat:@"\n}"];
     return logMessage;
 }
@@ -155,7 +158,6 @@
         view.dataSource = self;
         view.delegate   = self;
         view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-
     }
     return view;
 }
