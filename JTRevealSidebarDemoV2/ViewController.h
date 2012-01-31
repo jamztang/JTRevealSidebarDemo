@@ -14,7 +14,7 @@
 // necessarity of the container created in AppDelegate. Please let
 // me know if you've got any elegant solution and send me a pull request!
 // You can change EXPERIEMENTAL_ORIENTATION_SUPPORT to 1 for testing purpose
-#define EXPERIEMENTAL_ORIENTATION_SUPPORT 0
+#define EXPERIEMENTAL_ORIENTATION_SUPPORT 1
 
 @class SidebarViewController;
 

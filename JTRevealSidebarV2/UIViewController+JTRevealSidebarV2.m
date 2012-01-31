@@ -87,6 +87,13 @@ static char *revealedStateKey;
     return baseTransform;
 }
 
+// Converting the applicationFrame from UIWindow is founded to be always correct
+- (CGRect)applicationViewFrame {
+    CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+    CGRect expectedFrame = [self.view convertRect:appFrame fromView:nil];
+    return expectedFrame;
+}
+
 @end
 
 #define SIDEBAR_VIEW_TAG 10000

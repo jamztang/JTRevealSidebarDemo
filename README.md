@@ -49,30 +49,36 @@ Include all header and implementation files in JTRevealSidebarV2/ into your proj
 
     // This is an examle to configure your sidebar view through a custom UIViewController
     - (UIView *)viewForLeftSidebar {
-        CGRect mainFrame = [[UIScreen mainScreen] applicationFrame];
+        // Use applicationViewFrame to get the correctly calculated view's frame
+        // for use as a reference to our sidebar's view 
+        CGRect viewFrame = self.navigationController.applicationViewFrame;
         UITableViewController *controller = self.leftSidebarViewController;
         if ( ! controller) {
             self.leftSidebarViewController = [[SidebarViewController alloc] init];
             self.leftSidebarViewController.sidebarDelegate = self;
             controller = self.leftSidebarViewController;
-            controller.view.frame = CGRectMake(0, mainFrame.origin.y, 270, mainFrame.size.height);
             controller.title = @"LeftSidebarViewController";
         }
+        controller.view.frame = CGRectMake(0, viewFrame.origin.y, 270, viewFrame.size.height);
+        controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
         return controller.view;
     }
 
     // This is an examle to configure your sidebar view without a UIViewController
     - (UIView *)viewForRightSidebar {
-        CGRect mainFrame = [[UIScreen mainScreen] applicationFrame];
+        // Use applicationViewFrame to get the correctly calculated view's frame
+        // for use as a reference to our sidebar's view 
+        CGRect viewFrame = self.navigationController.applicationViewFrame;
         UITableView *view = self.rightSidebarView;
         if ( ! view) {
-            view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectMake(50, mainFrame.origin.y, 270, mainFrame.size.height)];
+            view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectZero];
             view.dataSource = self;
             view.delegate   = self;
         }
+        view.frame = CGRectMake(self.navigationController.view.frame.size.width - 270, viewFrame.origin.y, 270, viewFrame.size.height);
+        view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         return view;
     }
-    @end
 
 ### Interacting and revealing your sidebar
 
@@ -107,7 +113,11 @@ Orientation changing is not an officially completed feature, the main thing to f
 Go to JTRevealSidebarV2/ViewController.h and change EXPERIEMENTAL_ORIENTATION_SUPPORT to 1 for testing purpose.
 
 31/1/2012 updated:  
-Improved orientation support with a better animation, now you needed to #import <QuartzCore/QuartzCore.h> in your project for this sake
+Improved orientation support with a better animation, now you needed to #import &lt;QuartzCore/QuartzCore.h&gt; in your project for this sake
+
+1/2/2012 update:
+Fixed #6 Wrong origin for sidebar views when first revealed in landscape mode (Experiental), the orientation support should be ready!
+
 
 ### Reminder
 

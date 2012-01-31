@@ -86,9 +86,9 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    self.navigationController.view.frame              = (CGRect){_containerOrigin, self.navigationController.view.frame.size};
     self.navigationController.view.layer.bounds       = (CGRect){CGPointZero, self.navigationController.view.frame.size};
-    
+    self.navigationController.view.frame              = (CGRect){_containerOrigin, self.navigationController.view.frame.size};
+   
     NSLog(@"%@", self);
 }
 
@@ -99,7 +99,9 @@
     logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.leftSidebarViewController.view];
     logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.rightSidebarView];
     logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", self.navigationController.navigationBar];
-    logMessage = [logMessage stringByAppendingFormat:@"\n\t%@", NSStringFromCGRect([[UIApplication sharedApplication] statusBarFrame])];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t <statusBarFrame> %@", NSStringFromCGRect([[UIApplication sharedApplication] statusBarFrame])];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t <applicationFrame> %@", NSStringFromCGRect([[UIScreen mainScreen] applicationFrame])];
+    logMessage = [logMessage stringByAppendingFormat:@"\n\t <preferredViewFrame> %@", NSStringFromCGRect(self.navigationController.applicationViewFrame)];
     logMessage = [logMessage stringByAppendingFormat:@"\n}"];
     return logMessage;
 }
@@ -136,29 +138,34 @@
 
 // This is an examle to configure your sidebar view through a custom UIViewController
 - (UIView *)viewForLeftSidebar {
-    CGRect mainFrame = [[UIScreen mainScreen] applicationFrame];
+    // Use applicationViewFrame to get the correctly calculated view's frame
+    // for use as a reference to our sidebar's view 
+    CGRect viewFrame = self.navigationController.applicationViewFrame;
     UITableViewController *controller = self.leftSidebarViewController;
     if ( ! controller) {
         self.leftSidebarViewController = [[SidebarViewController alloc] init];
         self.leftSidebarViewController.sidebarDelegate = self;
         controller = self.leftSidebarViewController;
-        controller.view.frame = CGRectMake(0, mainFrame.origin.y, 270, mainFrame.size.height);
         controller.title = @"LeftSidebarViewController";
-        controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     }
+    controller.view.frame = CGRectMake(0, viewFrame.origin.y, 270, viewFrame.size.height);
+    controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     return controller.view;
 }
 
 // This is an examle to configure your sidebar view without a UIViewController
 - (UIView *)viewForRightSidebar {
-    CGRect mainFrame = [[UIScreen mainScreen] applicationFrame];
+    // Use applicationViewFrame to get the correctly calculated view's frame
+    // for use as a reference to our sidebar's view 
+    CGRect viewFrame = self.navigationController.applicationViewFrame;
     UITableView *view = self.rightSidebarView;
     if ( ! view) {
-        view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectMake(50, mainFrame.origin.y, 270, mainFrame.size.height)];
+        view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectZero];
         view.dataSource = self;
         view.delegate   = self;
-        view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
     }
+    view.frame = CGRectMake(self.navigationController.view.frame.size.width - 270, viewFrame.origin.y, 270, viewFrame.size.height);
+    view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
     return view;
 }
 
