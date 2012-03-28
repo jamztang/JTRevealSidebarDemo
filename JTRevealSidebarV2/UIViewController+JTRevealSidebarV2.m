@@ -152,6 +152,10 @@ static char *revealedStateKey;
 
 
     [UIView commitAnimations];
+	
+	if ( [delegate respondsToSelector:@selector(sidebarDidChangeState)]) {
+		[delegate sidebarDidChangeState];
+	}
 }
 
 - (void)revealRightSidebar:(BOOL)showRightSidebar {
@@ -186,6 +190,10 @@ static char *revealedStateKey;
     NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
     
     [UIView commitAnimations];
+	
+	if ( [delegate respondsToSelector:@selector(sidebarDidChangeState)]) {
+		[delegate sidebarDidChangeState];
+	}
 }
 
 @end
