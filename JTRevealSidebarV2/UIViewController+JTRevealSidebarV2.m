@@ -13,6 +13,7 @@
 
 @interface UIViewController (JTRevealSidebarV2Private)
 
+- (UIViewController *)selectedViewController;
 - (void)revealLeftSidebar:(BOOL)showLeftSidebar;
 - (void)revealRightSidebar:(BOOL)showRightSidebar;
 
@@ -23,8 +24,17 @@
 static char *revealedStateKey;
 
 - (void)setRevealedState:(JTRevealedState)revealedState {
-    
     JTRevealedState currentState = self.revealedState;
+
+    if (revealedState == currentState) {
+        return;
+    }
+
+    id <JTRevealSidebarV2Delegate> delegate = [self selectedViewController].navigationItem.revealSidebarDelegate;
+    // notify delegate for controller will change state
+    if ([delegate respondsToSelector:@selector(willChangeRevealedStateForViewController:)]) {
+        [delegate willChangeRevealedStateForViewController:self];
+    }
 
     objc_setAssociatedObject(self, &revealedStateKey, [NSNumber numberWithInt:revealedState], OBJC_ASSOCIATION_RETAIN);
 
@@ -60,6 +70,11 @@ static char *revealedStateKey;
         default:
             break;
     }
+
+    // notify delegate for controller will change state
+    if ([delegate respondsToSelector:@selector(didChangeRevealedStateForViewController:)]) {
+        [delegate didChangeRevealedStateForViewController:self];
+    }
 }
 
 - (JTRevealedState)revealedState {
@@ -92,6 +107,14 @@ static char *revealedStateKey;
     CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
     CGRect expectedFrame = [self.view convertRect:appFrame fromView:nil];
     return expectedFrame;
+}
+
+- (void)toggleRevealState:(JTRevealedState)openingState {
+    JTRevealedState state = openingState;
+    if (self.revealedState == openingState) {
+        state = JTRevealedStateNo;
+    }
+    [self setRevealedState:state];
 }
 
 @end

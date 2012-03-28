@@ -90,19 +90,11 @@ Include all header and implementation files in JTRevealSidebarV2/ into your proj
     #pragma mark Action
 
     - (void)revealLeftSidebar:(id)sender {
-        JTRevealedState state = JTRevealedStateLeft;
-        if (self.navigationController.revealedState == JTRevealedStateLeft) {
-            state = JTRevealedStateNo;
-        }
-        [self.navigationController setRevealedState:state];
+        [self.navigationController toggleRevealState:JTRevealedStateLeft];
     }
 
     - (void)revealRightSidebar:(id)sender {
-        JTRevealedState state = JTRevealedStateRight;
-        if (self.navigationController.revealedState == JTRevealedStateRight) {
-            state = JTRevealedStateNo;
-        }
-        [self.navigationController setRevealedState:state];
+        [self.navigationController toggleRevealState:JTRevealedStateRight];
     }
 
     @end

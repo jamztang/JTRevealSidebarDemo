@@ -13,5 +13,7 @@
 @optional
 - (UIView *)viewForLeftSidebar;
 - (UIView *)viewForRightSidebar;
+- (void)willChangeRevealedStateForViewController:(UIViewController *)viewController;
+- (void)didChangeRevealedStateForViewController:(UIViewController *)viewController;
 
 @end
