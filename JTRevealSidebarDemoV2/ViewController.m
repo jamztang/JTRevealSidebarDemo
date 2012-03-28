@@ -54,7 +54,7 @@
     [pushButton setTitle:@"Push NewViewController" forState:UIControlStateNormal];
     [pushButton sizeToFit];
     [pushButton addTarget:self action:@selector(pushNewViewController:) forControlEvents:UIControlEventTouchUpInside];
-    pushButton.frame = (CGRect){60, 150, pushButton.frame.size};
+    pushButton.frame = (CGRect){10, 150, self.view.frame.size.width - 20, pushButton.frame.size.height};
     [self.view addSubview:pushButton];
 
     self.navigationItem.revealSidebarDelegate = self;
@@ -159,6 +159,16 @@
     view.frame = CGRectMake(self.navigationController.view.frame.size.width - 270, viewFrame.origin.y, 270, viewFrame.size.height);
     view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
     return view;
+}
+
+// Optional delegate methods for additional configuration after reveal state changed
+- (void)didChangeRevealedStateForViewController:(UIViewController *)viewController {
+    // Example to disable userInteraction on content view while sidebar is revealing
+    if (viewController.revealedState == JTRevealedStateNo) {
+        self.view.userInteractionEnabled = YES;
+    } else {
+        self.view.userInteractionEnabled = NO;
+    }
 }
 
 @end

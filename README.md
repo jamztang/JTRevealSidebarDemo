@@ -80,6 +80,16 @@ Include all header and implementation files in JTRevealSidebarV2/ into your proj
         return view;
     }
 
+    // Optional delegate methods for additional configuration after reveal state changed
+    - (void)didChangeRevealedStateForViewController:(UIViewController *)viewController {
+        // Example to disable userInteraction on content view while sidebar is revealing
+        if (viewController.revealedState == JTRevealedStateNo) {
+            self.view.userInteractionEnabled = YES;
+        } else {
+            self.view.userInteractionEnabled = NO;
+        }
+    }
+
 ### Interacting and revealing your sidebar
 
     @implementation ViewController
