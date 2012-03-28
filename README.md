@@ -114,6 +114,9 @@ Include all header and implementation files in JTRevealSidebarV2/ into your proj
 Orientation changing is not an officially completed feature, the main thing to fix is the rotation animation and the necessarity of the container created in AppDelegate. Please let me know if you've got any elegant solution and send me a pull request!  
 Go to JTRevealSidebarV2/ViewController.h and change EXPERIEMENTAL_ORIENTATION_SUPPORT to 1 for testing purpose.
 
+29/3/2012 updated:
+Added handy method for toggling reveal state, also added example to disable user interaction while sidebar is revealing
+
 31/1/2012 updated:  
 Improved orientation support with a better animation, now you needed to #import &lt;QuartzCore/QuartzCore.h&gt; in your project for this sake
 
