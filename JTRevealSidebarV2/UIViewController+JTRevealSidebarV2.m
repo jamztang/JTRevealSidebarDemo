@@ -94,6 +94,14 @@ static char *revealedStateKey;
     return expectedFrame;
 }
 
+- (void)toggleRevealState:(JTRevealedState)openingState {
+    JTRevealedState state = openingState;
+    if (self.revealedState == openingState) {
+        state = JTRevealedStateNo;
+    }
+    [self setRevealedState:state];
+}
+
 @end
 
 #define SIDEBAR_VIEW_TAG 10000
