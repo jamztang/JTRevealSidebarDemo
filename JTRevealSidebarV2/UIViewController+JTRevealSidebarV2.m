@@ -70,11 +70,6 @@ static char *revealedStateKey;
         default:
             break;
     }
-
-    // notify delegate for controller will change state
-    if ([delegate respondsToSelector:@selector(didChangeRevealedStateForViewController:)]) {
-        [delegate didChangeRevealedStateForViewController:self];
-    }
 }
 
 - (JTRevealedState)revealedState {
@@ -128,8 +123,18 @@ static char *revealedStateKey;
 }
 
 - (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-    UIView *view = [self.view.superview viewWithTag:(int)context];
-    [view removeFromSuperview];
+    if ([animationID isEqualToString:@"hideSidebarView"]) {
+        // Remove the sidebar view after the sidebar closes.
+        UIView *view = [self.view.superview viewWithTag:(int)context];
+        [view removeFromSuperview];
+    }
+    
+    // notify delegate for controller changed state
+    id <JTRevealSidebarV2Delegate> delegate = 
+        [self selectedViewController].navigationItem.revealSidebarDelegate;
+    if ([delegate respondsToSelector:@selector(didChangeRevealedStateForViewController:)]) {
+        [delegate didChangeRevealedStateForViewController:self];
+    }
 }
 
 - (void)revealLeftSidebar:(BOOL)showLeftSidebar {
@@ -157,11 +162,10 @@ static char *revealedStateKey;
 //        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
         
         self.view.frame = (CGRect){CGPointZero, self.view.frame.size};
-
-
-        [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-        [UIView setAnimationDelegate:self];
     }
+    
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    [UIView setAnimationDelegate:self];
     
     NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
 
@@ -192,11 +196,11 @@ static char *revealedStateKey;
     } else {
         [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
 //        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
-        self.view.frame = (CGRect){CGPointZero, self.view.frame.size};
-        
-        [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-        [UIView setAnimationDelegate:self];
+        self.view.frame = (CGRect){CGPointZero, self.view.frame.size};        
     }
+    
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    [UIView setAnimationDelegate:self];
 
     NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
     
