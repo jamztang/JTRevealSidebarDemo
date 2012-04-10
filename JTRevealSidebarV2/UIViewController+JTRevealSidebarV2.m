@@ -123,8 +123,11 @@ static char *revealedStateKey;
 }
 
 - (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-    UIView *view = [self.view.superview viewWithTag:(int)context];
-    [view removeFromSuperview];
+    if ([animationID isEqualToString:@"hideSidebarView"]) {
+        // Remove the sidebar view after the sidebar closes.
+        UIView *view = [self.view.superview viewWithTag:(int)context];
+        [view removeFromSuperview];
+    }
     
     // notify delegate for controller changed state
     id <JTRevealSidebarV2Delegate> delegate = 
