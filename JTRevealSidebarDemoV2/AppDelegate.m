@@ -8,10 +8,21 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "JTRevealSidebarV2Delegate.h"
+#import "SidebarViewController.h"
+#import "UIViewController+JTRevealSidebarV2.h"
+#import "UINavigationItem+JTRevealSidebarV2.h"
+
+@interface AppDelegate () <JTRevealSidebarV2Delegate>
+@property (nonatomic, strong) SidebarViewController  *leftSidebarViewController;
+@property (nonatomic, strong) UINavigationController *navController;
+@property (nonatomic, strong) UITabBarController     *tabBarController;
+@end
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize leftSidebarViewController, navController, tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,13 +32,20 @@
 
     ViewController *controller = [[ViewController alloc] init];
     controller.title = @"ViewController";
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:[NSArray arrayWithObject:self.navController]];
+    self.navController.navigationItem.revealSidebarDelegate = self;
+
+    
+    controller.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ButtonMenu.png"]  style:UIBarButtonItemStyleBordered target:self action:@selector(revealLeftSidebar:)];
 
 #if EXPERIEMENTAL_ORIENTATION_SUPPORT
-    UINavigationController *container = [[UINavigationController alloc] init];
-    [container setNavigationBarHidden:YES animated:NO];
-    [container setViewControllers:[NSArray arrayWithObject:navController] animated:NO];
-    self.window.rootViewController = container;
+//    UINavigationController *container = [[UINavigationController alloc] init];
+//    [container setNavigationBarHidden:YES animated:NO];
+//    [container setViewControllers:[NSArray arrayWithObject:navController] animated:NO];
+    self.window.rootViewController = tabBarController;
 #else
     self.window.rootViewController = navController;
 #endif
@@ -36,43 +54,31 @@
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
+
+#pragma mark JTRevealSidebarDelegate
+
+// This is an examle to configure your sidebar view through a custom UIViewController
+- (UIView *)viewForLeftSidebar {
+    // Use applicationViewFrame to get the correctly calculated view's frame
+    // for use as a reference to our sidebar's view 
+    CGRect viewFrame = self.navController.applicationViewFrame;
+    UITableViewController *controller = self.leftSidebarViewController;
+    if ( ! controller) {
+        self.leftSidebarViewController = [[SidebarViewController alloc] init];
+//        self.leftSidebarViewController.sidebarDelegate = self;
+        controller = self.leftSidebarViewController;
+        controller.title = @"LeftSidebarViewController";
+    }
+    controller.view.frame = CGRectMake(0, viewFrame.origin.y, 270, viewFrame.size.height);
+    controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
+    return controller.view;
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
-}
+#pragma mark Action
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    /*
-     Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     */
-}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
+- (void)revealLeftSidebar:(id)sender {
+    [self.tabBarController toggleRevealState:JTRevealedStateLeft];
 }
 
 @end
