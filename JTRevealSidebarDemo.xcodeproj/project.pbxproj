@@ -23,11 +23,7 @@
 		1A617EAC148FC4A7005EC465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A617EAA148FC4A7005EC465 /* InfoPlist.strings */; };
 		1A617EAF148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EAE148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.m */; };
 		1A617EB9148FC4DB005EC465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EB8148FC4DB005EC465 /* ViewController.m */; };
-		1A617EC1148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC0148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m */; };
-		1A617EC4148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC3148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m */; };
 		1A81A5D814951CEF00BF03B8 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A81A5D714951CEE00BF03B8 /* SidebarViewController.m */; };
-		1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89988C1445FBDB001C5FFB /* JTNavigationView.m */; };
-		1ACADFFA145720F4000F5E15 /* JTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACADFF9145720F4000F5E15 /* JTNavigationBar.m */; };
 		1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
 		1AD4708814446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		1AD4708A14446392002EE1B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
@@ -42,10 +38,30 @@
 		1AD470A914446392002EE1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		1AD470B114446392002EE1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD470AF14446392002EE1B0 /* InfoPlist.strings */; };
 		1AD470B414446392002EE1B0 /* JTRevealSidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470B314446392002EE1B0 /* JTRevealSidebarDemoTests.m */; };
-		1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */; };
-		1AE7FCB4144F43020050B97E /* JTTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCB3144F43020050B97E /* JTTableViewDatasource.m */; };
-		1AE7FCB8144F461C0050B97E /* JTTableViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCB7144F461C0050B97E /* JTTableViewCellFactory.m */; };
-		1AE7FCBB144F4BAD0050B97E /* JTTableViewCellModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCBA144F4BAD0050B97E /* JTTableViewCellModal.m */; };
+		37E67F211591080200043822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
+		37E67F2B1591086200043822 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC0148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m */; };
+		37E67F2C1591086200043822 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC3148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m */; };
+		37E67F2D1591088A00043822 /* JTRevealSidebarV2Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EBB148FC5B4005EC465 /* JTRevealSidebarV2Delegate.h */; };
+		37E67F2E1591088A00043822 /* UINavigationItem+JTRevealSidebarV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EBF148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.h */; };
+		37E67F2F1591088A00043822 /* UIViewController+JTRevealSidebarV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EC2148FC706005EC465 /* UIViewController+JTRevealSidebarV2.h */; };
+		37E67F30159108A900043822 /* libJTRevealSidebarV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E67F201591080200043822 /* libJTRevealSidebarV2.a */; };
+		37E67F38159109C500043822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
+		37E67F4215910A0600043822 /* JTRevealSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */; };
+		37E67F4315910A0600043822 /* JTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A89988C1445FBDB001C5FFB /* JTNavigationView.m */; };
+		37E67F4415910A0600043822 /* JTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACADFF9145720F4000F5E15 /* JTNavigationBar.m */; };
+		37E67F4515910A0600043822 /* JTTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCB3144F43020050B97E /* JTTableViewDatasource.m */; };
+		37E67F4615910A0600043822 /* JTTableViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCB7144F461C0050B97E /* JTTableViewCellFactory.m */; };
+		37E67F4715910A0600043822 /* JTTableViewCellModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7FCBA144F4BAD0050B97E /* JTTableViewCellModal.m */; };
+		37E67F4815910A0F00043822 /* libJTRevealSidebar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E67F37159109C500043822 /* libJTRevealSidebar.a */; };
+		37E67F4B15910A3800043822 /* JTRevealSidebarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD470BE144463B4002EE1B0 /* JTRevealSidebarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F4C15910A3800043822 /* JTNavigationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A89988B1445FBDB001C5FFB /* JTNavigationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F4D15910A3800043822 /* JTNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ACADFF8145720F4000F5E15 /* JTNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F4E15910A3800043822 /* JTTableViewDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE7FCB2144F43020050B97E /* JTTableViewDatasource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F4F15910A3800043822 /* JTTableViewCellFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE7FCB6144F461C0050B97E /* JTTableViewCellFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F5015910A3800043822 /* JTTableViewCellModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE7FCB9144F4BAD0050B97E /* JTTableViewCellModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F5115910A8800043822 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708514446391002EE1B0 /* UIKit.framework */; };
+		37E67F5215910AE200043822 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708914446392002EE1B0 /* CoreGraphics.framework */; };
+		37E67F5415910B6E00043822 /* JTRevealSidebar-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 37E67F5315910B6E00043822 /* JTRevealSidebar-Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +78,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1AD4708014446391002EE1B0;
 			remoteInfo = JTRevealSidebarDemo;
+		};
+		37E67F311591094900043822 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD4707814446391002EE1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37E67F1F1591080200043822;
+			remoteInfo = JTRevealSidebarV2;
+		};
+		37E67F4915910A1300043822 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD4707814446391002EE1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37E67F36159109C500043822;
+			remoteInfo = JTRevealSidebar;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -103,7 +133,6 @@
 		1AD4708D14446392002EE1B0 /* JTRevealSidebarDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JTRevealSidebarDemo-Info.plist"; sourceTree = "<group>"; };
 		1AD4708F14446392002EE1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AD4709114446392002EE1B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1AD4709314446392002EE1B0 /* JTRevealSidebarDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JTRevealSidebarDemo-Prefix.pch"; sourceTree = "<group>"; };
 		1AD4709414446392002EE1B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AD4709514446392002EE1B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1AD4709714446392002EE1B0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -124,6 +153,9 @@
 		1AE7FCB7144F461C0050B97E /* JTTableViewCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellFactory.m; sourceTree = "<group>"; };
 		1AE7FCB9144F4BAD0050B97E /* JTTableViewCellModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewCellModal.h; sourceTree = "<group>"; };
 		1AE7FCBA144F4BAD0050B97E /* JTTableViewCellModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewCellModal.m; sourceTree = "<group>"; };
+		37E67F201591080200043822 /* libJTRevealSidebarV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJTRevealSidebarV2.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E67F37159109C500043822 /* libJTRevealSidebar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJTRevealSidebar.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E67F5315910B6E00043822 /* JTRevealSidebar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JTRevealSidebar-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E67F30159108A900043822 /* libJTRevealSidebarV2.a in Frameworks */,
 				1A0883FC14D6FEB500628D99 /* QuartzCore.framework in Frameworks */,
 				1A617E8D148FC4A6005EC465 /* UIKit.framework in Frameworks */,
 				1A617E8E148FC4A6005EC465 /* Foundation.framework in Frameworks */,
@@ -152,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E67F4815910A0F00043822 /* libJTRevealSidebar.a in Frameworks */,
 				1AD4708614446391002EE1B0 /* UIKit.framework in Frameworks */,
 				1AD4708814446392002EE1B0 /* Foundation.framework in Frameworks */,
 				1AD4708A14446392002EE1B0 /* CoreGraphics.framework in Frameworks */,
@@ -165,6 +199,24 @@
 				1AD470A714446392002EE1B0 /* SenTestingKit.framework in Frameworks */,
 				1AD470A814446392002EE1B0 /* UIKit.framework in Frameworks */,
 				1AD470A914446392002EE1B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E67F1D1591080200043822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E67F211591080200043822 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E67F34159109C500043822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E67F5215910AE200043822 /* CoreGraphics.framework in Frameworks */,
+				37E67F5115910A8800043822 /* UIKit.framework in Frameworks */,
+				37E67F38159109C500043822 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +304,8 @@
 				1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */,
 				1A617E8B148FC4A6005EC465 /* JTRevealSidebarDemoV2.app */,
 				1A617EA1148FC4A7005EC465 /* JTRevealSidebarDemoV2Tests.octest */,
+				37E67F201591080200043822 /* libJTRevealSidebarV2.a */,
+				37E67F37159109C500043822 /* libJTRevealSidebar.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,7 +342,6 @@
 				1AD4708D14446392002EE1B0 /* JTRevealSidebarDemo-Info.plist */,
 				1AD4708E14446392002EE1B0 /* InfoPlist.strings */,
 				1AD4709114446392002EE1B0 /* main.m */,
-				1AD4709314446392002EE1B0 /* JTRevealSidebarDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -315,6 +368,7 @@
 		1AD470BD144463B4002EE1B0 /* JTRevealSidebar */ = {
 			isa = PBXGroup;
 			children = (
+				37E67F5315910B6E00043822 /* JTRevealSidebar-Prefix.pch */,
 				1AD470BE144463B4002EE1B0 /* JTRevealSidebarView.h */,
 				1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */,
 				1A89988B1445FBDB001C5FFB /* JTNavigationView.h */,
@@ -333,6 +387,33 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		37E67F1E1591080200043822 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E67F2D1591088A00043822 /* JTRevealSidebarV2Delegate.h in Headers */,
+				37E67F2E1591088A00043822 /* UINavigationItem+JTRevealSidebarV2.h in Headers */,
+				37E67F2F1591088A00043822 /* UIViewController+JTRevealSidebarV2.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E67F35159109C500043822 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E67F4B15910A3800043822 /* JTRevealSidebarView.h in Headers */,
+				37E67F4C15910A3800043822 /* JTNavigationView.h in Headers */,
+				37E67F4D15910A3800043822 /* JTNavigationBar.h in Headers */,
+				37E67F4E15910A3800043822 /* JTTableViewDatasource.h in Headers */,
+				37E67F4F15910A3800043822 /* JTTableViewCellFactory.h in Headers */,
+				37E67F5015910A3800043822 /* JTTableViewCellModal.h in Headers */,
+				37E67F5415910B6E00043822 /* JTRevealSidebar-Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1A617E8A148FC4A6005EC465 /* JTRevealSidebarDemoV2 */ = {
 			isa = PBXNativeTarget;
@@ -345,6 +426,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				37E67F321591094900043822 /* PBXTargetDependency */,
 			);
 			name = JTRevealSidebarDemoV2;
 			productName = JTRevealSidebarDemoV2;
@@ -381,6 +463,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				37E67F4A15910A1300043822 /* PBXTargetDependency */,
 			);
 			name = JTRevealSidebarDemo;
 			productName = JTRevealSidebarDemo;
@@ -406,6 +489,40 @@
 			productReference = 1AD470A514446392002EE1B0 /* JTRevealSidebarDemoTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		37E67F1F1591080200043822 /* JTRevealSidebarV2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37E67F281591080200043822 /* Build configuration list for PBXNativeTarget "JTRevealSidebarV2" */;
+			buildPhases = (
+				37E67F1C1591080200043822 /* Sources */,
+				37E67F1D1591080200043822 /* Frameworks */,
+				37E67F1E1591080200043822 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JTRevealSidebarV2;
+			productName = JTRevealSidebarV2;
+			productReference = 37E67F201591080200043822 /* libJTRevealSidebarV2.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		37E67F36159109C500043822 /* JTRevealSidebar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37E67F3F159109C500043822 /* Build configuration list for PBXNativeTarget "JTRevealSidebar" */;
+			buildPhases = (
+				37E67F33159109C500043822 /* Sources */,
+				37E67F34159109C500043822 /* Frameworks */,
+				37E67F35159109C500043822 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JTRevealSidebar;
+			productName = JTRevealSidebar;
+			productReference = 37E67F37159109C500043822 /* libJTRevealSidebar.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -426,6 +543,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				37E67F36159109C500043822 /* JTRevealSidebar */,
+				37E67F1F1591080200043822 /* JTRevealSidebarV2 */,
 				1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */,
 				1AD470A414446392002EE1B0 /* JTRevealSidebarDemoTests */,
 				1A617E8A148FC4A6005EC465 /* JTRevealSidebarDemoV2 */,
@@ -510,8 +629,6 @@
 				1A617E97148FC4A7005EC465 /* main.m in Sources */,
 				1A617E9B148FC4A7005EC465 /* AppDelegate.m in Sources */,
 				1A617EB9148FC4DB005EC465 /* ViewController.m in Sources */,
-				1A617EC1148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m in Sources */,
-				1A617EC4148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m in Sources */,
 				1A81A5D814951CEF00BF03B8 /* SidebarViewController.m in Sources */,
 				1A057B6E1495400F0069D7AD /* NewViewController.m in Sources */,
 			);
@@ -532,12 +649,6 @@
 				1AD4709214446392002EE1B0 /* main.m in Sources */,
 				1AD4709614446392002EE1B0 /* AppDelegate.m in Sources */,
 				1AD4709914446392002EE1B0 /* ViewController.m in Sources */,
-				1AD470C0144463B4002EE1B0 /* JTRevealSidebarView.m in Sources */,
-				1A89988D1445FBDB001C5FFB /* JTNavigationView.m in Sources */,
-				1AE7FCB4144F43020050B97E /* JTTableViewDatasource.m in Sources */,
-				1AE7FCB8144F461C0050B97E /* JTTableViewCellFactory.m in Sources */,
-				1AE7FCBB144F4BAD0050B97E /* JTTableViewCellModal.m in Sources */,
-				1ACADFFA145720F4000F5E15 /* JTNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +657,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD470B414446392002EE1B0 /* JTRevealSidebarDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E67F1C1591080200043822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E67F2B1591086200043822 /* UINavigationItem+JTRevealSidebarV2.m in Sources */,
+				37E67F2C1591086200043822 /* UIViewController+JTRevealSidebarV2.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E67F33159109C500043822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E67F4215910A0600043822 /* JTRevealSidebarView.m in Sources */,
+				37E67F4315910A0600043822 /* JTNavigationView.m in Sources */,
+				37E67F4415910A0600043822 /* JTNavigationBar.m in Sources */,
+				37E67F4515910A0600043822 /* JTTableViewDatasource.m in Sources */,
+				37E67F4615910A0600043822 /* JTTableViewCellFactory.m in Sources */,
+				37E67F4715910A0600043822 /* JTTableViewCellModal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +694,16 @@
 			isa = PBXTargetDependency;
 			target = 1AD4708014446391002EE1B0 /* JTRevealSidebarDemo */;
 			targetProxy = 1AD470AA14446392002EE1B0 /* PBXContainerItemProxy */;
+		};
+		37E67F321591094900043822 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37E67F1F1591080200043822 /* JTRevealSidebarV2 */;
+			targetProxy = 37E67F311591094900043822 /* PBXContainerItemProxy */;
+		};
+		37E67F4A15910A1300043822 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37E67F36159109C500043822 /* JTRevealSidebar */;
+			targetProxy = 37E67F4915910A1300043822 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,6 +767,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Prefix.pch";
 				INFOPLIST_FILE = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -637,6 +781,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Prefix.pch";
 				INFOPLIST_FILE = "JTRevealSidebarDemoV2/JTRevealSidebarDemoV2-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -728,9 +873,8 @@
 		1AD470B814446392002EE1B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JTRevealSidebarDemo/JTRevealSidebarDemo-Prefix.pch";
 				INFOPLIST_FILE = "JTRevealSidebarDemo/JTRevealSidebarDemo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -739,9 +883,8 @@
 		1AD470B914446392002EE1B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JTRevealSidebarDemo/JTRevealSidebarDemo-Prefix.pch";
 				INFOPLIST_FILE = "JTRevealSidebarDemo/JTRevealSidebarDemo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -778,6 +921,58 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		37E67F291591080200043822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JTRevealSidebarV2.dst;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		37E67F2A1591080200043822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JTRevealSidebarV2.dst;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		37E67F40159109C500043822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JTRevealSidebar.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebar/JTRevealSidebar-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		37E67F41159109C500043822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JTRevealSidebar.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTRevealSidebar/JTRevealSidebar-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -828,6 +1023,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		37E67F281591080200043822 /* Build configuration list for PBXNativeTarget "JTRevealSidebarV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37E67F291591080200043822 /* Debug */,
+				37E67F2A1591080200043822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		37E67F3F159109C500043822 /* Build configuration list for PBXNativeTarget "JTRevealSidebar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37E67F40159109C500043822 /* Debug */,
+				37E67F41159109C500043822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
