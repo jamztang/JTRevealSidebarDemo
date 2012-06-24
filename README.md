@@ -26,7 +26,14 @@ How To Use It
 
 ### Installation
 
+Method 1:
 Include all header and implementation files in JTRevealSidebarV2/ into your project. 
+
+Method 2:
+Using [CocoaPods](https://github.com/CocoaPods/CocoaPods).
+
+Method 3: (Thanks for [gpascale](https://github.com/gpascale))
+Include as static library into your project. [View the instructions](http://mystcolor.me/post/25785144262/getting-static-libraries-into-your-ios-project)
 
 ### Setting up your first sidebar, configure your viewController and conform to the JTRevealSidebarV2Delegate
 

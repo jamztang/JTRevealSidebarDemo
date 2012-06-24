@@ -41,9 +41,9 @@
 		37E67F211591080200043822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		37E67F2B1591086200043822 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC0148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.m */; };
 		37E67F2C1591086200043822 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A617EC3148FC706005EC465 /* UIViewController+JTRevealSidebarV2.m */; };
-		37E67F2D1591088A00043822 /* JTRevealSidebarV2Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EBB148FC5B4005EC465 /* JTRevealSidebarV2Delegate.h */; };
-		37E67F2E1591088A00043822 /* UINavigationItem+JTRevealSidebarV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EBF148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.h */; };
-		37E67F2F1591088A00043822 /* UIViewController+JTRevealSidebarV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EC2148FC706005EC465 /* UIViewController+JTRevealSidebarV2.h */; };
+		37E67F2D1591088A00043822 /* JTRevealSidebarV2Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EBB148FC5B4005EC465 /* JTRevealSidebarV2Delegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F2E1591088A00043822 /* UINavigationItem+JTRevealSidebarV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EBF148FC612005EC465 /* UINavigationItem+JTRevealSidebarV2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E67F2F1591088A00043822 /* UIViewController+JTRevealSidebarV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A617EC2148FC706005EC465 /* UIViewController+JTRevealSidebarV2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37E67F30159108A900043822 /* libJTRevealSidebarV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E67F201591080200043822 /* libJTRevealSidebarV2.a */; };
 		37E67F38159109C500043822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD4708714446391002EE1B0 /* Foundation.framework */; };
 		37E67F4215910A0600043822 /* JTRevealSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD470BF144463B4002EE1B0 /* JTRevealSidebarView.m */; };
@@ -932,6 +932,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/JTRevealSidebarV2;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -944,6 +945,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/JTRevealSidebarV2;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -958,6 +960,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/JTRevealSidebar;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -972,6 +975,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/JTRevealSidebar;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1031,6 +1035,7 @@
 				37E67F2A1591080200043822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37E67F3F159109C500043822 /* Build configuration list for PBXNativeTarget "JTRevealSidebar" */ = {
 			isa = XCConfigurationList;
@@ -1039,6 +1044,7 @@
 				37E67F41159109C500043822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
