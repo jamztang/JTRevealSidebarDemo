@@ -122,7 +122,10 @@ static char *revealedStateKey;
     return self;
 }
 
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+// Looks like we collasped with the official animationDidStop:finished:context: 
+// implementation in the default UITabBarController here, that makes us never
+// getting the callback we wanted. So we renamed the callback method here.
+- (void)animationDidStop2:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
     if ([animationID isEqualToString:@"hideSidebarView"]) {
         // Remove the sidebar view after the sidebar closes.
         UIView *view = [self.view.superview viewWithTag:(int)context];
@@ -164,7 +167,7 @@ static char *revealedStateKey;
         self.view.frame = (CGRect){CGPointZero, self.view.frame.size};
     }
     
-    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop2:finished:context:)];
     [UIView setAnimationDelegate:self];
     
     NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
@@ -199,7 +202,7 @@ static char *revealedStateKey;
         self.view.frame = (CGRect){CGPointZero, self.view.frame.size};        
     }
     
-    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop2:finished:context:)];
     [UIView setAnimationDelegate:self];
 
     NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
