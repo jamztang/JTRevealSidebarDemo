@@ -164,7 +164,7 @@ static char *revealedStateKey;
         [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
 //        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
         
-        self.view.frame = (CGRect){CGPointZero, self.view.frame.size};
+        self.view.frame = CGRectOffset(self.view.frame, -width, 0);
     }
     
     [UIView setAnimationDidStopSelector:@selector(animationDidStop2:finished:context:)];
@@ -199,7 +199,7 @@ static char *revealedStateKey;
     } else {
         [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
 //        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
-        self.view.frame = (CGRect){CGPointZero, self.view.frame.size};        
+        self.view.frame = CGRectOffset(self.view.frame, width, 0);
     }
     
     [UIView setAnimationDidStopSelector:@selector(animationDidStop2:finished:context:)];
