@@ -126,14 +126,9 @@ static char *revealedStateKey;
 // implementation in the default UITabBarController here, that makes us never
 // getting the callback we wanted. So we renamed the callback method here.
 - (void)animationDidStop2:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-    if ([animationID isEqualToString:@"hideSidebarView"]) {
-        // Remove the sidebar view after the sidebar closes.
-        UIView *view = [self.view.superview viewWithTag:(int)context];
-        [view removeFromSuperview];
-    }
-    
     // notify delegate for controller changed state
-    id <JTRevealSidebarV2Delegate> delegate = 
+
+    id <JTRevealSidebarV2Delegate> delegate =
         [self selectedViewController].navigationItem.revealSidebarDelegate;
     if ([delegate respondsToSelector:@selector(didChangeRevealedStateForViewController:)]) {
         [delegate didChangeRevealedStateForViewController:self];
@@ -149,6 +144,7 @@ static char *revealedStateKey;
     }
 
     UIView *revealedView = [delegate viewForLeftSidebar];
+
     revealedView.tag = SIDEBAR_VIEW_TAG;
     CGFloat width = CGRectGetWidth(revealedView.frame);
 
@@ -156,22 +152,21 @@ static char *revealedStateKey;
         [self.view.superview insertSubview:revealedView belowSubview:self.view];
         
         [UIView beginAnimations:@"" context:nil];
-//        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
         
         self.view.frame = CGRectOffset(self.view.frame, width, 0);
 
     } else {
-        [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
-//        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
-        
+        [UIView beginAnimations:@"hideSidebarView" context:NULL];
         self.view.frame = CGRectOffset(self.view.frame, -width, 0);
+
+        // Remove the sidebar within the animation block, so viewWillDisappear and
+        // viewDidDisappear will be properly called
+        UIView *strongRevealedView = [self.view.superview viewWithTag:SIDEBAR_VIEW_TAG];
+        [strongRevealedView removeFromSuperview];
     }
-    
+
     [UIView setAnimationDidStopSelector:@selector(animationDidStop2:finished:context:)];
     [UIView setAnimationDelegate:self];
-    
-    NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
-
 
     [UIView commitAnimations];
 }
@@ -193,19 +188,20 @@ static char *revealedStateKey;
         [self.view.superview insertSubview:revealedView belowSubview:self.view];
 
         [UIView beginAnimations:@"" context:nil];
-//        self.view.transform = CGAffineTransformTranslate([self baseTransform], -width, 0);
         
         self.view.frame = CGRectOffset(self.view.frame, -width, 0);
     } else {
-        [UIView beginAnimations:@"hideSidebarView" context:(void *)SIDEBAR_VIEW_TAG];
-//        self.view.transform = CGAffineTransformTranslate([self baseTransform], width, 0);
+        [UIView beginAnimations:@"hideSidebarView" context:NULL];
         self.view.frame = CGRectOffset(self.view.frame, width, 0);
+
+        // Remove the sidebar within the animation block, so viewWillDisappear and
+        // viewDidDisappear will be properly called
+        UIView *strongRevealedView = [self.view.superview viewWithTag:SIDEBAR_VIEW_TAG];
+        [strongRevealedView removeFromSuperview];
     }
     
     [UIView setAnimationDidStopSelector:@selector(animationDidStop2:finished:context:)];
     [UIView setAnimationDelegate:self];
-
-    NSLog(@"%@", NSStringFromCGAffineTransform(self.view.transform));
     
     [UIView commitAnimations];
 }
