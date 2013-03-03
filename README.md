@@ -1,5 +1,20 @@
 JTRevealSidebarV2
-===============
+=================
+
+Dear Developers, 
+
+The world has left iOS 4.3 behind, the time I developed this library. Now with storyboards and view controller containers, this library should really be leveraging those great power. I appreciated for all the contributions to this library, but for now please consider this as a learning milestone.
+
+The reason I choose to implement as navigation item is still valid, but it could be even cleaner in ways like using responder chain. 
+
+So what now? There's some great ones from other developers here at this [bit.ly bundle](http://bitly.com/bundles/o_27ukkruo5l/1).
+
+If you're also happy to discuss and talk more on it or adding links the the bitly collection, find me on twitter - [@mystcolor](twitter.com/mystcolor).
+
+Cheers,  
+James
+
+--------------
 
 An iOS objective-c library template for mimic the sidebar layout of the new Facebook app and the Path app.  
 JTRevealSidebarV2 is aimed to be a truly flexible and reusable solution for this which has been carefully implemented.  
