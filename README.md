@@ -1,4 +1,4 @@
-JTRevealSidebarV2
+JTRevealSidebarV2 (archived)
 =================
 
 Dear Developers, 
