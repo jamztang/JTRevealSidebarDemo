@@ -1,18 +1,17 @@
-JTRevealSidebarV2 (archived)
+JTRevealSidebarV2 (discontinued)
 =================
 
-Dear Developers, 
+Apple isn't encouraging the sidebar pattern, we can see that throughout all the official updated 
+on iOS 7, they can potentially put it in the Mail app, the AppStore app, but it never gets actually adopted.
 
-The world has left iOS 4.3 behind, the time I developed this library. Now with storyboards and view controller containers, this library should really be leveraging those great power. I appreciated for all the contributions to this library, but for now please consider this as a learning milestone.
-
-The reason I choose to implement as navigation item is still valid, but it could be even cleaner in ways like using responder chain. 
-
-So what now? There's some great ones from other developers here at this [bit.ly bundle](http://bitly.com/bundles/o_27ukkruo5l/1).
-
-If you're also happy to discuss and talk more on it or adding links the the bitly collection, find me on twitter - [@mystcolor](twitter.com/mystcolor).
+So it's better for me to make this explicitly discontinued than leaving it open.
+If you're not convinced, at the mean time you may want to use other libraries
+like [ViewDeck](https://github.com/Inferis/ViewDeck),
+[PKRevealController](https://github.com/pkluz/PKRevealController), or browse the
+[bit.ly bundle](http://bitly.com/bundles/o_27ukkruo5l/1).
 
 Cheers,  
-James
+Jamz
 
 --------------
 
