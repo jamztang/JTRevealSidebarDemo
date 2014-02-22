@@ -151,3 +151,7 @@ Remember to check out the sample working code in JTRevealSidebarDemoV2/ViewContr
 
 James
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jamztang/jtrevealsidebardemo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
