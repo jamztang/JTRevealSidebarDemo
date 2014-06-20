@@ -3,7 +3,7 @@ JTRevealSidebarV2 (discontinued)
 
 _Updated (20 June 2014)_
 
-Apple explicitly discourage the "Hamburger Menu". Watch [WWDC 2014 - 211 Designing User Intuitive User Experience][https://developer.apple.com/videos/wwdc/2014/?id=211].
+Apple explicitly discourage the "Hamburger Menu". Watch [WWDC 2014 - 211 Designing User Intuitive User Experience](https://developer.apple.com/videos/wwdc/2014/?id=211).
 
 
 -
