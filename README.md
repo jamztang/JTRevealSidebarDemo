@@ -1,6 +1,13 @@
 JTRevealSidebarV2 (discontinued)
 =================
 
+_Updated (20 June 2014)_
+
+Apple explicitly discourage the "Hamburger Menu". Watch [WWDC 2014 - 211 Designing User Intuitive User Experience][https://developer.apple.com/videos/wwdc/2014/?id=211].
+
+
+-
+
 Apple isn't encouraging the sidebar pattern, we can see that throughout all the official updated 
 on iOS 7, they can potentially put it in the Mail app, the AppStore app, but it never gets actually adopted.
 
@@ -11,7 +18,7 @@ like [ViewDeck](https://github.com/Inferis/ViewDeck),
 [bit.ly bundle](http://bitly.com/bundles/o_27ukkruo5l/1).
 
 Cheers,  
-Jamz
+James
 
 --------------
 
